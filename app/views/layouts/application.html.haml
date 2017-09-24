@@ -5,10 +5,14 @@
     %title Tutors
     = csrf_meta_tags
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
+    %header.ly-header
+      - if user_signed_in?
+        %p= link_to "ログアウト", destroy_user_session_path, method: :delete
     %p.notice= notice
     %p.alert= alert
-    - if user_signed_in?
-      %p= link_to "ログアウト", destroy_user_session_path, method: :delete
+
+
     = yield
