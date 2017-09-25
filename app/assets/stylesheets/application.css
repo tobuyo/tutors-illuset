@@ -14,6 +14,29 @@
  *= require_self
  */
 
+input, button, textarea, select {
+  margin: 0;
+  padding: 0;
+  background: none;
+  border: 1px solid #ccc;
+  border-radius: 0;
+  outline: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+
+.ly-form-content{
+	width: 400px;
+	height: 400px;
+	margin: auto;
+	background-color: #fff;
+	border-radius: 5px;
+	margin-top: 200px;
+
+}
+
 .ly-header{
 	background-color: #4267b2;
 	height: 50px;
