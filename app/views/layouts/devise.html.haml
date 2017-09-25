@@ -7,7 +7,8 @@
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
 
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
-  %body
+  %body{:style => "background-color: #ccc;"}
+    %img.tutors-logo{:src => "assets/tutors_logo.png"}/
     %p.notice= notice
     %p.alert= alert
 
