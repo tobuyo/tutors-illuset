@@ -1,0 +1,5 @@
+%h1 投稿
+= form_for @lesson do |f|
+  = f.label :title, "タイトル"
+  = f.text_field :title
+  = f.submit "Send"
