@@ -11,8 +11,6 @@
     %header.ly-header
       - if user_signed_in?
         %p= link_to "ログアウト", destroy_user_session_path, method: :delete
-    %p.notice= notice
-    %p.alert= alert
-
-
-    = yield
+        %p.notice= notice
+        %p.alert= alert
+= yield
