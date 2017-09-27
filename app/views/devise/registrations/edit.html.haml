@@ -1,38 +1,55 @@
 .ly-form-content
   %h2
-    Edit #{resource_name.to_s.humanize}
+    会員情報を変更する
   = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
     = devise_error_messages!
     .field
-      = f.label :email
+      = f.label :username, "ユーザーネーム"
+      %br/
+      = f.text_field :username, autofocus: true
+    .field
+      = f.label :simpleintroduce, "ひとこと"
+      %br/
+      = f.text_field :simpleintroduce, autofocus: true
+    .field
+      = f.label :introduction, "自己紹介"
+      %br/
+      = f.text_field :introduction, autofocus: true
+
+    .field
+      = f.label :image, "アイコン画像"
+      %br/
+      = f.file_field :image
+    .field
+      = f.label :email, "メールアドレス"
       %br/
       = f.email_field :email, autofocus: true
     - if devise_mapping.confirmable? && resource.pending_reconfirmation?
       %div
         Currently waiting confirmation for: #{resource.unconfirmed_email}
     .field
-      = f.label :password
-      %i (leave blank if you don't want to change it)
+      = f.label :password, "新しいパスワード"
+      %i (変更のない場合空欄)
       %br/
       = f.password_field :password, autocomplete: "off"
       - if @minimum_password_length
         %br/
         %em
           = @minimum_password_length
-          characters minimum
+          文字以上の長さ
     .field
-      = f.label :password_confirmation
+      = f.label :password_confirmation, "新しいパスワード　確認"
       %br/
       = f.password_field :password_confirmation, autocomplete: "off"
     .field
-      = f.label :current_password
-      %i (we need your current password to confirm your changes)
+      = f.label :current_password, "現在のパスワード"
+      %i (必須)
       %br/
       = f.password_field :current_password, autocomplete: "off"
-      = f.file_field :image
+      
     .actions
-      = f.submit "Update"
-  %h3 Cancel my account
+      = f.submit "更新"
+  %h3 アカウント削除
   %p
-    Unhappy? #{button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete}
-  = link_to "Back", :back
+    #{button_to "アカウントを削除する", registration_path(resource_name), data: { confirm: "まじ？" }, method: :delete}
+  = link_to "トップページへ戻る", :back

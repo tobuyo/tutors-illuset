@@ -3,4 +3,3 @@ class AddImageToUsers < ActiveRecord::Migration[5.1]
     add_column :users, :image, :string
   end
 end
-rails g migration AddIconToItems icon:string

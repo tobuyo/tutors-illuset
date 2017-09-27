@@ -7,10 +7,10 @@ class ApplicationController < ActionController::Base
   protected
 
   def configure_permitted_parameters
-  	added_attrs = [ :username, :email, :password, :password_confirmation, :icon, :image ]
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:username, :icon, :image])
-    devise_parameter_sanitizer.permit(:sign_in, keys: [:username, :icon, :image])
-    devise_parameter_sanitizer.permit(:account_update, keys: [:username, :icon, :image])
-    devise_parameter_sanitizer.permit(:sign_in, keys: [:username, :icon, :image])
+  	added_attrs = [ :username, :email, :password, :password_confirmation, :icon, :image, :simpleintroduce, :introduction ]
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:username, :icon, :image, :simpleintroduce, :introduction])
+    devise_parameter_sanitizer.permit(:sign_in, keys: [:username, :icon, :image, :simpleintroduce, :introduction])
+    devise_parameter_sanitizer.permit(:account_update, keys: [:username, :icon, :image, :simpleintroduce, :introduction])
+    devise_parameter_sanitizer.permit(:sign_in, keys: [:username, :icon, :image, :simpleintroduce, :introduction])
   end
 end

@@ -1,4 +1,7 @@
 = provide(:title, @user.email)
 %h1 My page
-= @user.email
+= @user.username
+/= image_tag @user.icon.url
+= @user.simpleintroduce
+= @user.introduction
 = image_tag @user.image.url
