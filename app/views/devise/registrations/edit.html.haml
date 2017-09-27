@@ -29,6 +29,7 @@
       %i (we need your current password to confirm your changes)
       %br/
       = f.password_field :current_password, autocomplete: "off"
+      = f.file_field :image
     .actions
       = f.submit "Update"
   %h3 Cancel my account

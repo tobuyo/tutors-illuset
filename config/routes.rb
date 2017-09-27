@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
   devise_for :users, :controllers => {
- 	:registrations => 'users/registrations'
-	}
+    :sessions      => "users/sessions",
+    :registrations => "users/registrations",
+    :passwords     => "users/passwords",
+  }
+  resources :users, :only => [:index, :show]
   root 'static_pages#home'
 
 	resources :lessons
