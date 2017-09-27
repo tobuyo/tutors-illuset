@@ -1,7 +1,6 @@
 class LessonsController < ApplicationController
 
 
-
   def index
     @lessons = Lesson.includes(:user).page(params[:page]).per().order("created_at DESC")
   end
@@ -11,7 +10,13 @@ class LessonsController < ApplicationController
   end
 
   def create
-    current_user.lessons.create
+    @lesson = current_user.lessons.build(lesson_params)
+    if @lesson.save
+      flash[:success] = "Lesson created!"
+      redirect_to root_url
+    else
+      render 'static_pages/home'
+    end
   end
 
   def show
@@ -33,6 +38,13 @@ class LessonsController < ApplicationController
       @lesson.update
     end
   end
+
+  private
+  
+  def lesson_params
+    params.require(:lesson).permit(:user_id, :title, :price, :simple_description, :detail_description)
+  end
+
 
 
   # private

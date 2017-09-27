@@ -13,8 +13,15 @@
 ActiveRecord::Schema.define(version: 20170927023509) do
 
   create_table "lessons", force: :cascade do |t|
+    t.integer "user_id"
+    t.string "title"
+    t.text "simple_description"
+    t.text "detail_description"
+    t.integer "price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_id", "created_at"], name: "index_lessons_on_user_id_and_created_at"
+    t.index ["user_id"], name: "index_lessons_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|

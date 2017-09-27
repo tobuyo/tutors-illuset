@@ -1,5 +1,21 @@
 %h1 投稿
-= form_for @lesson do |f|
-  = f.label :title, "タイトル"
-  = f.text_field :title
-  = f.submit "Send"
+= form_for :lesson, url: lessons_path do |f|
+  %p
+    = f.label :title, "タイトル"
+    = f.text_field :title
+
+  %p
+    = f.label :price, "値段"
+    = f.text_field :price
+
+  %p
+    = f.label :simple_description, "シンプル"
+    = f.text_field :simple_description
+ 
+  %p
+    = f.label :detail_description, "詳細"
+    = f.text_area :detail_description, cols: 60, rows: 8
+
+    = f.submit "Send"
+
+

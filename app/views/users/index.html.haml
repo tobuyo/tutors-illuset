@@ -1,7 +1,11 @@
-= provide(:title, 'All users') 
+
 %h1 All users
  
 %ul.users
   = @users.each do |user| 
     %li
+      = image_tag user.image.url
       = link_to user.email, user
+      = user.username
+      = user.simpleintroduce
+      = user.introduction
