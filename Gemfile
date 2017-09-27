@@ -37,6 +37,10 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'carrierwave'
 
+gem 'fog'
+
+gem 'aws-sdk'
+
 gem 'devise'
 gem 'erb2haml'
 gem "haml-rails"
