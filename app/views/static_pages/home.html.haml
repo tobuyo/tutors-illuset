@@ -1,14 +1,21 @@
 %img.tutors-logo{:src => "assets/tutors_logo.png"}/
 %h1
+
 .ly-tag
+
 	今注目のタグ
 
+	
+
 %article.lessons
-	.mod-lessons-picture
-		河内りん
-	%h2.mod-lessons-title ギャルゲ塗り教えます！
-	%h3.mod-lessons-tags #ギャルゲ塗り
-	%p.mod-lessons-textarea ありがとうございます！めっちゃうまくなりました！
+	= @lessons.each do |lesson| 
+		.mod-lessons-picture
+			河内りん
+		%h2.mod-lessons-title 
+			= link_to lesson.title, lesson
+		%h3.mod-lessons-tags #ギャルゲ塗り
+		%p.mod-lessons-textarea 
+			= lesson.simple_description
 
 %article.lessons
 	.mod-lessons-picture
