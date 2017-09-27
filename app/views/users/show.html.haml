@@ -1,7 +1,12 @@
-= provide(:title, @user.email)
-%h1 My page
-= @user.username
-/= image_tag @user.icon.url
-= @user.simpleintroduce
-= @user.introduction
-= image_tag @user.image.url
+.ly-user-show
+
+  = provide(:title, @user.email)
+  %h1 My page
+
+  = image_tag @user.image.url
+  = @user.username
+  /= image_tag @user.icon.url
+  %h2 ひとこと
+  = @user.simpleintroduce
+  %h2 自己紹介
+  = @user.introduction
