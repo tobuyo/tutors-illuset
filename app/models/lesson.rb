@@ -8,6 +8,6 @@ class Lesson < ApplicationRecord
   validates :simple_description, presence: true, length: { maximum: 140 }
   validates :detail_description, presence: true, length: { maximum: 140 }
 
-
+  mount_uploader :image, ImageUploader
 
 end
