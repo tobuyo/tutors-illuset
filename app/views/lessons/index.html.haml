@@ -1,0 +1,6 @@
+%ul.ly-all-users
+  = @lessons.each do |lesson| 
+    = link_to lesson do
+      %li.mod-user-profile
+        = link_to lesson.title, lesson
+        = lesson.simple_description

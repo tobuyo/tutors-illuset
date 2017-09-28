@@ -2,7 +2,7 @@ class LessonsController < ApplicationController
 
 
   def index
-    @lessons = Lesson.includes(:user).page(params[:page]).per().order("created_at DESC")
+    @lessons = Lesson.all.order("created_at DESC")
   end
 
   def new
