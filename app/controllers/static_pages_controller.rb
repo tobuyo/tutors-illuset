@@ -4,6 +4,8 @@ class StaticPagesController < ApplicationController
     @lessons = Lesson.all
   end
 
+
+
   private
   
   def lesson_params

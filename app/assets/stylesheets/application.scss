@@ -6,6 +6,12 @@ li{
 	list-style: none;
 }
 
+p{
+	margin: 0;
+}
+
+
+
 .ly-form-content{
 	width: 400px;
 	height: 400px;
@@ -19,9 +25,28 @@ li{
 	background-color: #4267b2;
 	height: 50px;
 	width: 100%;
-	position: absolute;
-	box-shadow: 0 0 12px 1px rgba(0,0,0,0.3);
+	position: relative;
+	.header-to-mypage{
+		display: block;
+		padding: 10px;
+		box-sizing: border-box;
+		background-color: #fff;
+		position: absolute;
+		right: 40px;
+		border-radius: 10px;
+		top: 6px;
+	}
+	.header-image-picture{
+		width: 40px;
+		height: 40px;
+		position: absolute;
+		right: 160px;
+		top: 5px;
+		border: 1px solid #ccc;
+	}
 }
+
+
 .lessons{
 
 	width: 200px;
