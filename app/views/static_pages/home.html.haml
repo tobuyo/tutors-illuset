@@ -13,6 +13,8 @@
 			河内りん
 		%h2.mod-lessons-title 
 			= link_to lesson.title, lesson
-		%h3.mod-lessons-tags #ギャルゲ塗り
+
+		=	@tags.each do |lesson| 
+		%h3.mod-lessons-tags #可変
 		%p.mod-lessons-textarea 
 			= lesson.simple_description
