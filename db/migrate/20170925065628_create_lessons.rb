@@ -3,6 +3,7 @@ class CreateLessons < ActiveRecord::Migration[5.1]
     create_table :lessons do |t|
       t.references :user, index: true, foreign_key: true
       t.string :title
+      t.string :header
       t.text :simple_description
       t.text :detail_description
       t.integer :price

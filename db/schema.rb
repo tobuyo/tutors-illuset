@@ -15,6 +15,7 @@ ActiveRecord::Schema.define(version: 20170927023509) do
   create_table "lessons", force: :cascade do |t|
     t.integer "user_id"
     t.string "title"
+    t.string "header"
     t.text "simple_description"
     t.text "detail_description"
     t.integer "price"

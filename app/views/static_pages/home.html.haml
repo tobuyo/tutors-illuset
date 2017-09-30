@@ -6,15 +6,17 @@
 	今注目のタグ
 
 	
-= @lessons.each do |lesson| 
+- @lessons.each do |lesson| 
 	%article.lessons
 
 		.mod-lessons-picture
-			河内りん
+			.mod-lessons-name
+				河内りん
+			= image_tag lesson.header.url
+			
 		%h2.mod-lessons-title 
 			= link_to lesson.title, lesson
 
-		=	@tags.each do |lesson| 
-		%h3.mod-lessons-tags #可変
+		%h3.mod-lessons-tags
 		%p.mod-lessons-textarea 
 			= lesson.simple_description

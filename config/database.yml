@@ -10,8 +10,21 @@ default: &default
   timeout: 5000
 
 development:
-  <<: *default
+
+  adapter: sqlite3
   database: db/development.sqlite3
+  pool: 5
+  timeout: 5000
+#  adapter: mysql2
+#  encoding: utf8
+#  database: tutors_development
+#  pool: 5
+#  username: root
+#  password: 
+#  socket: /tmp/mysql.sock
+#  host: localhost
+#  charset: utf8
+#  collation: utf8_general_ci
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
