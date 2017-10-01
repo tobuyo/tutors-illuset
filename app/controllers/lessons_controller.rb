@@ -21,6 +21,7 @@ class LessonsController < ApplicationController
 
   def show
     @lesson = Lesson.find(params[:id])
+    @user = User.find(params[:id])
   end
 
   def destroy
@@ -45,6 +46,9 @@ class LessonsController < ApplicationController
     params.require(:lesson).permit(:header, :user_id, :title, :price, :simple_description, :detail_description)
   end
 
+  def user_params
+    params.require(:user).permit(:id, :username)
+  end
 
 
   # private

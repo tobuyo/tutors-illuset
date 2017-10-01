@@ -1,6 +1,11 @@
 .ly-lesson-show-wrapper
 
   .ly-lesson-sidebar
+
+
+    = @user.username
+    = link_to image_tag(@user.image.url), user_path, class: "lesson-sidebar-icon"
+
   .ly-lesson-show
 
     = image_tag @lesson.header.url
@@ -11,6 +16,7 @@
     %article.lessons
     %h2 講座名
     = @lesson.title
+    = link_to @user.username, user_path
     %h2 料金
     = @lesson.price
     %h2 シンプル説明
