@@ -1,15 +1,21 @@
-.ly-user-show
+.ly-lesson-show-wrapper
 
-  = provide(:lesson)
-  %h1 講座
+  .ly-lesson-sidebar
+  .ly-lesson-show
 
-  /= image_tag @user.image.url
-  %h2 講座名
-  = @lesson.title
-  %h2 料金
-  = @lesson.price
-  %h2 シンプル説明
-  = @lesson.simple_description
-  %h2 詳細説明
-  = @lesson.detail_description
-  /= image_tag @user.icon.url
+    = image_tag @lesson.header.url
+    = provide(:lesson)
+    %h1 講座
+
+    /= image_tag @user.image.url
+    %article.lessons
+    %h2 講座名
+    = @lesson.title
+    %h2 料金
+    = @lesson.price
+    %h2 シンプル説明
+    = @lesson.simple_description
+    %h2 詳細説明
+    = @lesson.detail_description
+    /= image_tag @user.icon.url
+

@@ -1,22 +1,43 @@
 
 %h1
 
-.ly-tag
+.ly-home-wrap
 
-	今注目のタグ
+	.ly-tag
 
-	
-- @lessons.each do |lesson| 
-	%article.lessons
+		今注目のタグ
 
-		.mod-lessons-picture
-			.mod-lessons-name
-				河内りん
-			= image_tag lesson.header.url
-			
-		%h2.mod-lessons-title 
-			= link_to lesson.title, lesson
+		
+	.ly-home-title
+		今注目のレッスン
+	- @lessons.each do |lesson| 
+		= link_to lesson do
+			%article.lessons
 
-		%h3.mod-lessons-tags
-		%p.mod-lessons-textarea 
-			= lesson.simple_description
+				.mod-lessons-picture
+					.mod-lessons-name
+						河内りん
+					= image_tag lesson.header.url
+					
+					%h2.mod-lessons-title 
+						= link_to lesson.title, lesson
+					%h3.mod-lessons-tags
+					%p.mod-lessons-textarea 
+						= lesson.simple_description
+
+	.ly-home-title
+		今注目のレポート
+	- @reports.each do |lesson| 
+		%article.lessons
+
+			.mod-lessons-picture
+				.mod-lessons-name
+					河内りん
+				= image_tag lesson.header.url
+				
+			%h2.mod-lessons-title 
+				= link_to lesson.title, lesson
+
+			%h3.mod-lessons-tags
+			%p.mod-lessons-textarea 
+				= lesson.simple_description

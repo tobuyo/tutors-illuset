@@ -1,6 +1,8 @@
 
 @import "normalize.scss";
 @import "users.scss";
+@import "static_pages.scss";
+@import "lessons.scss";
 
 li{
 	list-style: none;
@@ -9,6 +11,7 @@ li{
 p{
 	margin: 0;
 }
+
 
 
 
@@ -53,10 +56,10 @@ p{
 	height: auto;
 	background-color: #fff;
 	border-radius: 10px;
-	box-shadow: 0 0 12px 1px rgba(0,0,0,0.3);
-	border: 1px solid #ccc;
+	/*box-shadow: 0 0 12px 1px rgba(0,0,0,0.3);*/
+	border: 2px solid #ccc;
 	float: left;
-	margin: 20px;
+	margin: 10px;
 	box-sizing: border-box;
 }
 
@@ -65,26 +68,7 @@ p{
 	height: auto;
 }
 
-.mod-lessons-picture{
-	position: relative;
-	img{
-	width: 100%;
-	height: auto;
-	border-radius: 10px 10px 0 0;
-	background-repeat: no-repeat;
-	background-size: cover;
-	text-align: center;
-	}
-}
-.mod-lessons-name{
-	position: absolute;
-	font-size: 20px;
-	font-weight: bold;
-	width: 100%;
-	color: brown;
-	text-align: center;
-	background-color: rgba(255,255,255,0.8);
-}
+
 
 .ly-tag{
 	border: 1px solid #ccc;
@@ -121,8 +105,8 @@ p{
 	}
 }
 
-img {
+/*img {
 	width: 50px;
 	height: auto;
 	border-radius: 50px;
-}
+}*/

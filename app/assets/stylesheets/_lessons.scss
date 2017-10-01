@@ -1,0 +1,48 @@
+
+
+.ly-lesson-show-wrapper{
+	width: 900px;
+	margin: auto;
+	padding-top: 70px;
+}
+.ly-lesson-sidebar{
+	float: left;
+	margin-right: 50px;
+	width: 250px;
+	height: 500px;
+	background-color: #ccc;
+}
+.ly-lesson-show{
+	float: left;
+	background-color: #ccc;
+	width: 600px;
+	height: auto;
+	img{
+		width: auto;
+		height: 200px;
+		overflow: hidden;
+		position: relative;
+	}
+}
+
+.mod-lessons-picture{
+	position: relative;
+	img{
+	width: 100%;
+	height: auto;
+	border-radius: 10px 10px 0 0;
+	background-repeat: no-repeat;
+	background-size: cover;
+	text-align: center;
+	}
+}
+.mod-lessons-name{
+	position: absolute;
+	font-size: 20px;
+	font-wreight: bold;
+	width: 100%;
+	border-radius: 10px 10px 0 0;
+	color: brown;
+	text-align: center;
+	background-color: rgba(255,255,255,0.8);
+}

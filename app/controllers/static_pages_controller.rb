@@ -2,6 +2,8 @@ class StaticPagesController < ApplicationController
 
   def home
     @lessons = Lesson.all
+
+    @reports = Lesson.all.order(:title)
   end
 
 
