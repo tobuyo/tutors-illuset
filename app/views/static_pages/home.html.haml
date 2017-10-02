@@ -10,24 +10,29 @@
 		
 	.ly-home-title
 		今注目のレッスン
-	- @lessons.each do |lesson| 
+	- @lessons.first(4).each do |lesson|
 		= link_to lesson do
 			%article.lessons
 
 				.mod-lessons-picture
-					.mod-lessons-name
-						河内りん
+					.mod-lessons-title 
+						%h2.mod-lessons-name 
+							= link_to lesson.title, lesson
+						
+
 					= image_tag lesson.header.url
-					
-					%h2.mod-lessons-title 
-						= link_to lesson.title, lesson
+
+					- user = User.find(lesson.user_id)
+					= image_tag user.image.url, class: "mod-lessons-icon"
+					= user.username
+
 					%h3.mod-lessons-tags
 					%p.mod-lessons-textarea 
 						= lesson.simple_description
 
 	.ly-home-title
 		今注目のレポート
-	- @reports.each do |lesson| 
+	- @lessons.first(4).each do |lesson| 
 		%article.lessons
 
 			.mod-lessons-picture

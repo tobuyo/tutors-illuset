@@ -1,7 +1,7 @@
 .ly-user-show
 
   = provide(:title, @user.email)
-  
+
 
   = image_tag @user.image.url
   = @user.username
@@ -10,3 +10,19 @@
   = @user.simpleintroduce
   %h2 自己紹介
   = @user.introduction
+
+- @lessons.each do |lesson|
+  = link_to lesson do
+    %article.lessons
+
+      .mod-lessons-picture
+        .mod-lessons-title 
+          %h2.mod-lessons-name 
+            = link_to lesson.title, lesson
+          
+
+        = image_tag lesson.header.url
+
+        %h3.mod-lessons-tags
+        %p.mod-lessons-textarea 
+          = lesson.simple_description
