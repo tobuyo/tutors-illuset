@@ -15,3 +15,4 @@ class UsersController < ApplicationController
     params.require(:lesson).permit(:header, :user_id, :title, :price, :simple_description, :detail_description)
   end
 end
+
