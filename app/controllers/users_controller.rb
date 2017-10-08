@@ -6,7 +6,6 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @lessons = Lesson.find(params[:user_id])
-    binding.pry
   end
 
 
