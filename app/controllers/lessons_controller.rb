@@ -21,7 +21,7 @@ class LessonsController < ApplicationController
 
   def show
     @lesson = Lesson.find(params[:id])
-    @user = User.find(params[:id])
+    @user = User.find_by(params[:user_id])
   end
 
   def destroy
