@@ -1,61 +1,92 @@
 
 .ly-static-bigbanner-wrapper
 	.inner
-		%h1 画力向上の為の絵描き応援SNS型サイト
+		%h1 画力向上の為の絵描き応援SNS
 		%h1.is-bottom PENTER
 		%img.characters.is-left{src: "assets/chara1.png"}
 		%img.characters.is-right{src: "assets/chara2.png"}
 
 .ly-static-navi
 
-.ly-static-left
-	.left-header
-	.icon
-	.names-cell
-		.name 川地りん
-		.name-id @gingatrain814
-	.manage-cell
-		.want 添削希望管理
-		.pen 赤ペン管理
-		.report レポート管理
-	.attention 新着赤ペンがありました！
+.ly-static-contents-wrapper
+	.ly-static-left
+		.left-header
+		= image_tag current_user.image.url, class: "icon"
+		.names-cell
+			.name 川地りん
+			.name-id @gingatrain814
+		.manage-cell
+			.want 添削希望管理
+			.pen 赤ペン管理
+			.report レポート管理
+		.attention 新着赤ペンがありました！
+
+	.ly-home-wrap
+		.new-want.mod-news 最新の添削希望
+		.mod-static-lessons-wrappers
+			- @lessons.first(4).each do |lesson|
+				= link_to lesson do
+					%article.lessons
+
+						.mod-lessons-picture
+								
+
+							= image_tag lesson.header.url
+
+							- user = User.find(lesson.user_id)
+							= image_tag user.image.url, class: "mod-lessons-icon"
+
+							%h2.mod-lessons-name 
+								= link_to lesson.title, lesson
+
+							%h3.mod-lessons-tags
+							/ %p.mod-lessons-textarea 
+							/ 	= lesson.simple_description
 
 
-%h1
+		.new-pen.mod-news 最新の赤ペン
+		.mod-static-lessons-wrappers
+			- @lessons.first(4).each do |lesson|
+				= link_to lesson do
+					%article.lessons
 
-.ly-home-wrap
-	.new-want.mod-news 最新の添削希望
-	- @lessons.first(4).each do |lesson|
-		= link_to lesson do
-			%article.lessons
+						.mod-lessons-picture
+								
 
-				.mod-lessons-picture
-						
+							= image_tag lesson.header.url
 
-					= image_tag lesson.header.url
+							- user = User.find(lesson.user_id)
+							= image_tag user.image.url, class: "mod-lessons-icon"
 
-					- user = User.find(lesson.user_id)
-					= image_tag user.image.url, class: "mod-lessons-icon"
+							%h2.mod-lessons-name 
+								= link_to lesson.title, lesson
 
-					%h2.mod-lessons-name 
-						= link_to lesson.title, lesson
+							%h3.mod-lessons-tags
+							/ %p.mod-lessons-textarea 
+							/ 	= lesson.simple_description
 
-					%h3.mod-lessons-tags
-					/ %p.mod-lessons-textarea 
-					/ 	= lesson.simple_description
+		.new-report.mod-news 最新のレポート
+		.mod-static-lessons-wrappers
+			- @lessons.first(4).each do |lesson|
+				= link_to lesson do
+					%article.lessons
 
+						.mod-lessons-picture
+								
 
-	.new-pen.mod-news 最新の赤ペン
-	.new-report.mod-news 最新のレポート
+							= image_tag lesson.header.url
 
-.ly-static-right
-	.left-header
-	.icon
-	.names-cell
-		.name 川地りん
-		.name-id @gingatrain814
-	.manage-cell
-		.want 添削希望管理
-		.pen 赤ペン管理
-		.report レポート管理
-	.attention 新着赤ペンがありました！
+							- user = User.find(lesson.user_id)
+							= image_tag user.image.url, class: "mod-lessons-icon"
+
+							%h2.mod-lessons-name 
+								= link_to lesson.title, lesson
+
+							%h3.mod-lessons-tags
+							/ %p.mod-lessons-textarea 
+							/ 	= lesson.simple_description
+
+	.ly-static-right
+	.ly-static-right
+		.right-tag-title 人気のタグ
+		.tags

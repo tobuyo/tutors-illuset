@@ -4,22 +4,34 @@
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
     %title Tutors
     = csrf_meta_tags
+    %link{href: "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css", rel: "stylesheet", integrity: "sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN", crossorigin: "anonymous"}
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
-
-    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+    
   %body
+    %a.always-fix-tensaku{src: "#"}
     %header.ly-header
       .inner
         %img.tutors-logo{:src => "assets/tutors_logo.png"}/
-        = image_tag current_user.image.url, class: "header-image-picture"
-        .mod-header-buttons.is-header
-        .mod-header-buttons.is-header
-        .mod-header-buttons.is-header
-        .mod-header-buttons.is-header
-        %p.header-to-mypage= link_to "マイページ", user_path(current_user)
+        = link_to user_path(current_user) do
+          %i.fa.fa-user-circle.mod-header-buttons.is-header
+        = link_to user_path(current_user) do
+          %i.fa.fa-user-circle.mod-header-buttons.is-header
+        = link_to user_path(current_user) do
+          %i.fa.fa-user-circle.mod-header-buttons.is-header
+        = link_to user_path(current_user) do
+          %i.fa.fa-cog.mod-header-buttons.is-header
+
+        
+
 
         / - if user_signed_in?
         /   %p= link_to "ログアウト", destroy_user_session_path, method: :delete
         /   %p.notice= notice
         /   %p.alert= alert
-= yield
+
+    = yield
+
+    .ly-footer
+    %script{src: "https://code.jquery.com/jquery-3.2.1.min.js"}
+
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'

@@ -3,6 +3,7 @@
 @import "users.scss";
 @import "static_pages.scss";
 @import "lessons.scss";
+@import "footer.scss";
 
 li{
 	list-style: none;
@@ -11,14 +12,28 @@ li{
 p{
 	margin: 0;
 }
+body{
+	
+	background-color: #f7f5f5;
+}
+
+.always-fix-tensaku{
+	position: fixed;
+	width: 200px;
+	height: 200px;
+	border-radius: 100px;
+	background-color: red;
+	z-index: 200000;
+	right: 50px;
+	bottom: 50px;
+}
 
 
 .mod-header-buttons{
-	width: 40px;
-	height: 40px;
-	margin: 10px;
-	border-radius: 20px;
-	background-color: #ccc;
+	width: 30px;
+	height: 30px;
+	margin:  5px;
+	font-size: 30px;
 	&.is-header{
 		float: right;
 	}
@@ -71,16 +86,21 @@ p{
 
 	width: 136px;
 	height: 180px;
-	background-color: #ccc;
+	background-color: rgba(204, 204, 204, 0.3);
 	/*box-shadow: 0 0 12px 1px rgba(0,0,0,0.3);*/
 	float: left;
 	margin-right: 4px;
 	box-sizing: border-box;
 }
+.mod-static-lessons-wrappers{
+	height: 180px;
+	margin-bottom: 20px;
+}
 
 .tutors-logo{
-	width: 200px;
-	height: auto;
+    width: auto;
+    height: 30px;
+    margin: 5px;
 }
 
 
@@ -111,8 +131,7 @@ p{
 	}
 }
 
-/*img {
-	width: 50px;
-	height: auto;
-	border-radius: 50px;
-}*/
+@media (max-width: 600px) {
+
+
+}

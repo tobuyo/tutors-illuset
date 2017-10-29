@@ -13,3 +13,15 @@
 //= require rails-ujs
 //= require turbolinks
 //= require_tree .
+
+
+//スクロールによって下のフォームが出現する機能
+$(document).ready(function(){
+	$(".characters").not(':animated').hover(function(){
+		$(this)
+		.stop(true, true)
+		.animate({top:"3px"}, 80).animate({top:"10px"}, 150) // first jump
+		.animate({top:"8px"}, 80).animate({top:"13px"}, 150) // second jump
+		.animate({top:"13px"}, 80).animate({top:"20px"}, 150) // the last jump
+	});
+});
