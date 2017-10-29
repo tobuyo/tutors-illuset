@@ -113,9 +113,30 @@
   float: left;
   width: 300px;
   height: 400px;
-  background-color: #ccc;
+  background-color: #fff;
   margin: 10px 0 0 20px;
+  padding: 0 20px;
+  box-sizing: border-box;
   position: relative;
+  .right-tag-title{
+	  height: 22px;
+  	font-size: 16px;
+	  border-bottom: 1px solid #ccc;
+	  margin-bottom: 10px;
+		margin-top: 10px;
+	}
+	.mod-tag{
+		background-color: rgba(189, 191, 55, 1);
+		width: auto;
+		height: 15px;
+		font-size: 12px;
+		border-radius: 5px;
+		text-align: center;
+		color: #fff;
+		float: left;
+		margin: 2px;
+		padding: 2px 5px;
+	}
   .left-header {
     height: 150px;
     background-color: #000;
@@ -179,7 +200,7 @@
     height: 30px;
     font-size: 20px;
     border-bottom: 1px solid #ccc;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 		margin-top: 10px;
   }
   .is-want {}
@@ -205,6 +226,8 @@
 	height: 900px;
 	margin: auto;
 }
+
+
 
 @media screen and (min-width:768px) and ( max-width:1200px) {
 	.ly-static-contents-wrapper{
