@@ -1,0 +1,49 @@
+.ly-login{
+	width: 600px;
+	height: 300px;
+	margin: auto;
+	background-color: #fff;
+	padding: 0 30px;
+	
+	h2{
+		text-align: center;
+		padding: 10px;
+		font-weight: 100;
+	}
+	.login-contents{
+		width: 300px;
+		height: 200px;
+		float: left;
+		// background-color: blue;
+		box-sizing: border-box;
+		padding-left: 30px;
+		&.is-left{
+		}
+		&.is-right{
+			border-left: 1px solid #ccc;
+			padding-left: 50px;
+			padding-top: 15px;
+		}
+	}
+	.mod-button{
+		width: 200px;
+		height: 30px;
+		background-color: #fff;
+		border: 1px solid red;
+		font-size: 12px;
+		color: red;
+	}
+	.mod-inputs{
+		width: 200px;
+		height: 30px;
+		box-sizing: border-box;
+		border: 1px solid #000;
+	}
+	.remember{
+		padding: 10px 0;
+	}
+	.login-characters{
+		font-size: 12px;
+		color: #000;
+	}
+}
