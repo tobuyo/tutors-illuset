@@ -1,38 +1,38 @@
-
-
-.ly-lesson-show-wrapper{
-	width: 900px;
-	margin: auto;
-	padding-top: 70px;
-}
-.ly-lesson-sidebar{
-	float: left;
-	margin-right: 50px;
-	width: 250px;
-	height: 500px;
-	background-color: #ccc;
-	a.lesson-sidebar-icon{
-		width: 100px;
-		height: 100px;
-		border-radius: 5px;
-	}
-}
-.ly-lesson-show{
-	float: left;
-	background-color: #ccc;
-	width: 600px;
-	height: auto;
-	img{
-		width: auto;
-		height: 200px;
-		overflow: hidden;
-		position: relative;
-	}
+.ly-lesson-show-wrapper {
+  width: 900px;
+  margin: auto;
+  padding-top: 70px;
 }
 
+.ly-lesson-sidebar {
+  float: left;
+  margin-right: 50px;
+  width: 250px;
+  height: 500px;
+  background-color: #ccc;
+  a.lesson-sidebar-icon {
+    width: 100px;
+    height: 100px;
+    border-radius: 5px;
+  }
+}
+
+.ly-lesson-show {
+  float: left;
+  background-color: #ccc;
+  width: 600px;
+  height: auto;
+  img {
+    width: auto;
+    height: 200px;
+    overflow: hidden;
+    position: relative;
+  }
+}
 
 
-.ly-make-new-lesson-form{
+
+.ly-make-new-lesson-form {
   width: 700px;
   height: auto;
   padding: 30px;
@@ -40,32 +40,30 @@
   background-color: #ccc;
 }
 
-.mod-lessons-picture{
-	position: relative;
-	img{
-	width: 130px;
-	height: 130px;
-	margin: 3px;
-	background-repeat: no-repeat;
-	background-size: cover;
-	text-align: center;
-	}
-}
-.mod-lessons-title{
-	position: absolute;
-	font-size: 20px;
-	font-wreight: bold;
-	width: 100%;
-	height: 30px;
-	color: brown;
-	text-align: center;
-	background-color: rgba(255,255,255,0.8);
-	h2{
-		margin: 5px;
-	}
+.mod-lessons-picture {
+  position: relative;
+  img {
+    width: 130px;
+    height: 130px;
+    margin: 3px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+  }
 }
 
-@media (max-width: 600px) {
-	
-
+.mod-lessons-title {
+  position: absolute;
+  font-size: 20px;
+  font-wreight: bold;
+  width: 100%;
+  height: 30px;
+  color: brown;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.8);
+  h2 {
+    margin: 5px;
+  }
 }
+
+@media (max-width: 600px) {}

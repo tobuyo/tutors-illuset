@@ -11,7 +11,7 @@
     %a.always-fix-tensaku{src: "#"}
     %header.ly-header
       .inner
-        %img.tutors-logo{:src => "assets/tutors_logo.png"}/
+        %img.tutors-logo{:src => "https://s3-ap-northeast-1.amazonaws.com/tutors-upload-test/assets-images/tutors_logo.png"}/
         = form_tag user_path(current_user), :method => 'get' ,class: "header-form" do
           %p
           = text_field_tag :search, params[:search]

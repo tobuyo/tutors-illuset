@@ -4,7 +4,7 @@ Rails.application.routes.draw do
     :registrations => "users/registrations",
     :passwords     => "users/passwords",
   }
-  resources :users, :only => [:index, :show]
+  resources :users, :only => [:index, :show, :config]
   root 'static_pages#home'
 
 	resources :lessons

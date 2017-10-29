@@ -12,6 +12,9 @@ class UsersController < ApplicationController
     end
   end
 
+  # def config
+  #   @user = User.find(params[:id])
+  # end
 
   private
   def lesson_params

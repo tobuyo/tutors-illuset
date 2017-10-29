@@ -1,42 +1,140 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.ly-user-show {
+  width: 1000px;
+  margin: auto;
+  height: 1000px;
+  .user-show-main-content {
+    float: left;
+    background-color: #fff;
+    width: 600px;
+    height: 700px;
+    margin: 50px auto auto auto;
+    position: relative;
+    .icon {
+      position: absolute;
+      left: 20px;
+      top: 100px;
+      width: 150px;
+      height: 150px;
+      border-radius: 75px;
+    }
+    .header {
+      height: 150px;
+      background-color: #ccc;
+    }
 
+    .names{
+    	display: table;
+    	width: 400px;
+    	height: 40px;
+    	margin-left: 200px;
+    	line-height: 40px;
+    }
+    .name{
+    	display: table-cell;
+    	text-align: right;
+    	font-size: 30px;
+    	
+    }
+    .name-id{
+    	display: table-cell;
+    }
 
-.ly-user-show{
-	background-color: #ccc;
-	width: 400px;
-	height: auto;
+    .information-numbers{
+    	display: table;
+    	width: 400px;
+    	height: 50px;
+    	line-height: 50px;
+    	font-size: 40px;
+    	margin-left: 200px;
+			border-collapse: separate;  /* セルの間隔を空ける */
+			border-spacing: 10px 0;  /* 左右 上下で記述 */
+    }
+    .mod-numbers{
+    	width: 100px;
+    	height: 20px;
+    	border: 1px solid #ccc;
+    	display: table-cell;
+    	margin: 10px;
+    	text-align: center;
+    }
+
+    .favorite{
+    	
+    }
+    .tensaku{
+    }
+
+    .profiles{
+    	width: 580px;
+    	box-sizing: border-box;
+    	border: 1px solid #ccc;
+    	height: 300px;
+    	margin: 10px;
+    }
+  }
+
+  .user-show-left-content {
+    float: left;
+    width: 300px;
+    height: 500px;
+    background-color: #ccc;
+    text-align: center;
+    margin: 40px;
+    a {
+      text-decoration: none;
+    }
+    a:link {
+      color: #000;
+    }
+    a:visited {
+      color: #000;
+    }
+    a:hover {
+      color: #000;
+    }
+    a:active {
+      color: #000;
+    }
+  }
+  .mod-left-content {
+    width: 100%;
+    background-color: #fff;
+    border: 1px solid #000;
+    height: 40px;
+    box-sizing: border-box;
+    line-height: 40px;
+    text-align: left;
+    margin-top: -1px;
+    padding-left: 40px;
+    &:hover {
+    	background-color: #ccc;
+    }
+  }
 }
 
-.ly-all-users{
-	img{
-		border: 2px solid #ccc;
-	}
+.ly-all-users {
+  img {
+    border: 2px solid #ccc;
+  }
 }
 
-.ly-lesson-show-wrapper
-.ly-lesson-show{
-	background-color: #ccc;
-	width: 600px;
-	height: auto;
-}
-
-.ly-lesson-make{
-	width: 200px;
-	height: 200px;
-	background-color: #ccc;
-	text-align: center;
-	float: left;
+.ly-lesson-show-wrapper .ly-lesson-show {
+  background-color: #ccc;
+  width: 600px;
+  height: auto;
 }
 
 
-.mod-user-profile{
-	width: 400px;
-	height: auto;
-	margin: 20px auto;
-	padding: 20px;
-	border-radius: 10px;
-	border: 1px solid #ccc;
-	box-shadow: 0 0 12px 1px rgba(0,0,0,0.3);
+
+.mod-user-profile {
+  width: 400px;
+  height: auto;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  box-shadow: 0 0 12px 1px rgba(0, 0, 0, 0.3);
 }

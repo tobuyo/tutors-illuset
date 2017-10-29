@@ -1,33 +1,59 @@
+/ = provide(:title, @user.email)
+
 .ly-user-show
+  .user-show-left-content
+    .ul
+      = link_to new_lesson_path do
+        .li.mod-left-content 添削希望
+      = link_to new_lesson_path do
+        .li.mod-left-content 添削したもの
+      = link_to new_lesson_path do
+        .li.mod-left-content レポート
+      = link_to users_path do
+        .li.mod-left-content ユーザーを全員見る
+      = link_to new_lesson_path do
+        .li.mod-left-content プロフィールを編集する
+      = link_to root_path do
+        .li.mod-left-content 講座を全部見る
+      = link_to destroy_user_session_path, method: :delete do
+        .li.mod-left-content ログアウトする
+      = link_to root_path do
+        .li.mod-left-content 講座を全部見る
 
-  = provide(:title, @user.email)
+  .user-show-main-content
+    = image_tag @user.image.url, class: "icon"
+    .header
+    .names
+      .name
+        = @user.username
+      .name-id
+        @tobuyotobuto
+    .information-numbers
+      .mod-numbers.favorite 250
+      .mod-numbers.tensaku 250
+      .mod-numbers.nanka 250
+    .profiles
 
+      
+      
+      /= image_tag @user.icon.url
+      %h2 ひとこと
+      = @user.simpleintroduce
+      %h2 自己紹介
+      = @user.introduction
 
-  = image_tag @user.image.url
-  = @user.username
-  /= image_tag @user.icon.url
-  %h2 ひとこと
-  = @user.simpleintroduce
-  %h2 自己紹介
-  = @user.introduction
+      - @lessons.each do |lesson|
+        = link_to lesson do
+          %article.lessons
+            .mod-lessons-picture
+              .mod-lessons-title 
+                %h2.mod-lessons-name 
+                  = link_to lesson.title, lesson
+                
 
-- @lessons.each do |lesson|
-  = link_to lesson do
-    %article.lessons
+              = image_tag lesson.header.url
 
-      .mod-lessons-picture
-        .mod-lessons-title 
-          %h2.mod-lessons-name 
-            = link_to lesson.title, lesson
-          
+              %h3.mod-lessons-tags
+              %p.mod-lessons-textarea 
+                = lesson.simple_description
 
-        = image_tag lesson.header.url
-
-        %h3.mod-lessons-tags
-        %p.mod-lessons-textarea 
-          = lesson.simple_description
-
-.ly-lesson-make
-  = link_to "レッスンを作る", new_lesson_path
-  = link_to "ユーザーを全員見る", users_path
-  = link_to "講座を全部見る", root_path
