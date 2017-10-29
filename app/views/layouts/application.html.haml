@@ -12,14 +12,18 @@
     %header.ly-header
       .inner
         %img.tutors-logo{:src => "assets/tutors_logo.png"}/
+        = form_tag user_path(current_user), :method => 'get' ,class: "header-form" do
+          %p
+          = text_field_tag :search, params[:search]
+          = submit_tag "Search", :name => nil
         = link_to user_path(current_user) do
-          %i.fa.fa-user-circle.mod-header-buttons.is-header
+          %i.fa.fa-user-circle.mod-header-buttons
         = link_to user_path(current_user) do
-          %i.fa.fa-user-circle.mod-header-buttons.is-header
+          %i.fa.fa-star-o.mod-header-buttons.is-circled
         = link_to user_path(current_user) do
-          %i.fa.fa-user-circle.mod-header-buttons.is-header
+          %i.fa.fa-comment-o.mod-header-buttons.is-circled
         = link_to user_path(current_user) do
-          %i.fa.fa-cog.mod-header-buttons.is-header
+          %i.fa.fa-cog.mod-header-buttons
 
         
 
@@ -32,6 +36,17 @@
     = yield
 
     .ly-footer
+      .footer-contents
+        %p サイトマップ
+        %a.mod-contents-link TOPページ<br />
+        %a.mod-contents-link TUTORSって？<br />
+        %a.mod-contents-link レポート<br />
+        %a.mod-contents-link プロジェクト<br />
+        %a.mod-contents-link コレクション<br />
+        %a.mod-contents-link 投稿する<br />
+
+      .footer-rights @2017 PENTER.
+
     %script{src: "https://code.jquery.com/jquery-3.2.1.min.js"}
 
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
