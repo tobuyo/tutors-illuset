@@ -9,11 +9,17 @@
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
     %header.ly-header
-      %img.tutors-logo{:src => "assets/tutors_logo.png"}/
-      = image_tag current_user.image.url, class: "header-image-picture"
-      %p.header-to-mypage= link_to "マイページ", user_path(current_user)
-      - if user_signed_in?
-        %p= link_to "ログアウト", destroy_user_session_path, method: :delete
-        %p.notice= notice
-        %p.alert= alert
+      .inner
+        %img.tutors-logo{:src => "assets/tutors_logo.png"}/
+        = image_tag current_user.image.url, class: "header-image-picture"
+        .mod-header-buttons.is-header
+        .mod-header-buttons.is-header
+        .mod-header-buttons.is-header
+        .mod-header-buttons.is-header
+        %p.header-to-mypage= link_to "マイページ", user_path(current_user)
+
+        / - if user_signed_in?
+        /   %p= link_to "ログアウト", destroy_user_session_path, method: :delete
+        /   %p.notice= notice
+        /   %p.alert= alert
 = yield

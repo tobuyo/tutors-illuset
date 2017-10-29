@@ -1,48 +1,61 @@
 
+.ly-static-bigbanner-wrapper
+	.inner
+		%h1 画力向上の為の絵描き応援SNS型サイト
+		%h1.is-bottom PENTER
+		%img.characters.is-left{src: "assets/chara1.png"}
+		%img.characters.is-right{src: "assets/chara2.png"}
+
+.ly-static-navi
+
+.ly-static-left
+	.left-header
+	.icon
+	.names-cell
+		.name 川地りん
+		.name-id @gingatrain814
+	.manage-cell
+		.want 添削希望管理
+		.pen 赤ペン管理
+		.report レポート管理
+	.attention 新着赤ペンがありました！
+
+
 %h1
 
 .ly-home-wrap
-
-	.ly-tag
-
-		今注目のタグ
-
-		
-	.ly-home-title
-		今注目のレッスン
+	.new-want.mod-news 最新の添削希望
 	- @lessons.first(4).each do |lesson|
 		= link_to lesson do
 			%article.lessons
 
 				.mod-lessons-picture
-					.mod-lessons-title 
-						%h2.mod-lessons-name 
-							= link_to lesson.title, lesson
 						
 
 					= image_tag lesson.header.url
 
 					- user = User.find(lesson.user_id)
 					= image_tag user.image.url, class: "mod-lessons-icon"
-					= user.username
+
+					%h2.mod-lessons-name 
+						= link_to lesson.title, lesson
 
 					%h3.mod-lessons-tags
-					%p.mod-lessons-textarea 
-						= lesson.simple_description
+					/ %p.mod-lessons-textarea 
+					/ 	= lesson.simple_description
 
-	.ly-home-title
-		今注目のレポート
-	- @lessons.first(4).each do |lesson| 
-		%article.lessons
 
-			.mod-lessons-picture
-				.mod-lessons-name
-					河内りん
-				= image_tag lesson.header.url
-				
-			%h2.mod-lessons-title 
-				= link_to lesson.title, lesson
+	.new-pen.mod-news 最新の赤ペン
+	.new-report.mod-news 最新のレポート
 
-			%h3.mod-lessons-tags
-			%p.mod-lessons-textarea 
-				= lesson.simple_description
+.ly-static-right
+	.left-header
+	.icon
+	.names-cell
+		.name 川地りん
+		.name-id @gingatrain814
+	.manage-cell
+		.want 添削希望管理
+		.pen 赤ペン管理
+		.report レポート管理
+	.attention 新着赤ペンがありました！
