@@ -25,7 +25,8 @@
     %a.always-fix-tensaku{src: "#"}
     %header.ly-header
       .inner
-        %img.tutors-logo{:src => "https://s3-ap-northeast-1.amazonaws.com/tutors-upload-test/assets-images/tutors_logo.png"}/
+        = link_to root_path do
+          %img.tutors-logo{:src => "https://s3-ap-northeast-1.amazonaws.com/tutors-upload-test/assets-images/tutors_logo.png"}/
         = form_tag user_path(current_user), :method => 'get' ,class: "header-form" do
           %p
           = text_field_tag :search, params[:search]
@@ -50,12 +51,13 @@
     .ly-footer
       .footer-contents
         %p サイトマップ
-        %a.mod-contents-link TOPページ<br />
-        %a.mod-contents-link TUTORSって？<br />
-        %a.mod-contents-link レポート<br />
-        %a.mod-contents-link プロジェクト<br />
-        %a.mod-contents-link コレクション<br />
-        %a.mod-contents-link 投稿する<br />
+        = link_to "TOPページ", root_path, class: "mod-contents-link"
+        = link_to "マイページ", user_path(current_user), class: "mod-contents-link"
+        = link_to "添削希望", root_path, class: "mod-contents-link"
+        = link_to "赤ペン", root_path, class: "mod-contents-link"
+        = link_to "レポート", root_path, class: "mod-contents-link"
+        = link_to "投稿する", root_path, class: "mod-contents-link"
+        = link_to "TOPページ", root_path, class: "mod-contents-link"
 
       .footer-rights @2017 PENTER.
 

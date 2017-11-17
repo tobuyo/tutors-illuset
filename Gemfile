@@ -17,6 +17,8 @@ gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 
+gem "rmagick", "~>2.13.2", :require => 'RMagick'
+
 gem 'rails_12factor', group: :production
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
@@ -34,6 +36,12 @@ gem 'jbuilder', '~> 2.5'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+
+gem 'acts-as-taggable-on'
+
+gem 'friendly_id', '~> 5.1.0'
+
+gem 'jquery-ui-rails'
 
 gem 'carrierwave'
 

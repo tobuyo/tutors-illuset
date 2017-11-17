@@ -1,0 +1,82 @@
+.ly-lessons_new {
+  .ly-new-lesson-form {
+    width: 840px;
+    height: auto;
+    padding: 10px;
+    margin: auto;
+    box-sizing: border-box;
+    background-color: #fff;
+  }
+
+  .form-contents-warpper {
+    display: block;
+    padding: 0;
+  }
+
+  .form-contents {
+    display: inline-block;
+    &.about-picture {
+      width: 370px;
+      input {
+        display: none;
+        /* アップロードボタンのスタイルを無効にする */
+      }
+
+      label {
+        position: relative;
+        display: inline-block;
+        padding: 0.25em 0.5em;
+        text-decoration: none;
+        color: #fff;
+        background: rgba(28, 133, 134, 1);
+        border-radius: 4px;
+        box-shadow: inset 0 2px 0 rgba(255, 255, 255, 0.2), inset 0 -2px 0 rgba(0, 0, 0, 0.05);
+        font-weight: bold;
+        border: solid 2px rgba(0, 0, 0, 1);
+      }
+
+      label:active {
+        box-shadow: 0 0 2px rgba(0, 0, 0, 0.30);
+      }
+    }
+    &.about-forms {
+      width: 400px;
+    }
+
+    .right-input {
+      background-color: rgba(0, 0, 0, 0.14);
+      width: 445px;
+      box-sizing: border-box;
+    }
+    .submit {
+    	width: 445px;
+      position: relative;
+      display: inline-block;
+      padding: 0.25em 0.5em;
+      text-decoration: none;
+      color: #fff;
+      background: rgba(28, 133, 134, 1);
+      border-radius: 4px;
+      box-shadow: inset 0 2px 0 rgba(255, 255, 255, 0.2), inset 0 -2px 0 rgba(0, 0, 0, 0.05);
+      font-weight: bold;
+      border: solid 2px rgba(0, 0, 0, 1);
+    }
+
+    .submit:active {
+      box-shadow: 0 0 2px rgba(0, 0, 0, 0.30);
+    }
+    .submit {
+      margin: 10px 0;
+    }
+  }
+
+  .new-picture {
+    width: 350px;
+  }
+
+
+  .mod-form-label {
+    display: block;
+    padding: 10px 0;
+  }
+}

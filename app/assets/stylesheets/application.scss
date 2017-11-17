@@ -2,8 +2,11 @@
 @import "users.scss";
 @import "static_pages.scss";
 @import "lessons.scss";
+@import "lessons_new.scss";
 @import "login.scss";
 @import "footer.scss";
+@import "jquery.tagit.scss";
+@import "tagit.ui-zendesk.css";
 
 li {
   list-style: none;
@@ -15,6 +18,7 @@ p {
 
 body {
   background-color: #f7f5f5;
+  color: #575757;
 }
 
 .always-fix-tensaku {
@@ -38,18 +42,18 @@ body {
   color: #000;
   float: right;
   box-sizing: border-box;
-	padding-top: 0;
+  padding-top: 0;
   &.is-circled {
-  	border: 1px solid #000;
-  	font-size: 20px;
-  	padding: 5px;
+    border: 1px solid #000;
+    font-size: 20px;
+    padding: 5px;
   }
 }
 
 
-.header-form{
-	float: left;
-	margin-top: 10px;
+.header-form {
+  float: left;
+  margin-top: 10px;
 }
 
 
@@ -95,11 +99,9 @@ body {
 
 
 .lessons {
-
   width: 136px;
   height: 180px;
   background-color: rgba(204, 204, 204, 0.3);
-  /*box-shadow: 0 0 12px 1px rgba(0,0,0,0.3);*/
   float: left;
   margin-right: 4px;
   box-sizing: border-box;
@@ -117,8 +119,6 @@ body {
   margin: 5px;
 }
 
-
-
 .mod-lessons-name {
   font-size: 12px;
   text-align: center;
@@ -131,9 +131,5 @@ body {
 .mod-lessons-textarea {
   padding: 0 10px 0 10px;
 }
-
-
-
-
 
 @media (max-width: 600px) {}

@@ -1,25 +1,30 @@
-.ly-make-new-lesson-form
-  %h1 投稿（全部必須）
-  = form_for :lesson, url: lessons_path do |f|
-    %p
-      = f.label :title, "タイトル"
-      = f.text_field :title
+.ly-lessons_new
+  .ly-new-lesson-form
+    %h1 投稿（全部必須）
+    .field
+      %ul#lesson-tags
+    %ul.form-contents-warpper
 
-    %p
-      = f.label :price, "値段"
-      = f.text_field :price
+      = form_for :lesson, url: lessons_path do |f|
 
-    %p
-      = f.file_field :header
+        %li.form-contents.about-picture
+          = image_tag "new-lesson-picture.png", class: "new-picture"
+          %p
+            = f.label :header, "画像を選択します"
+            = f.file_field :header
 
-    %p
-      = f.label :simple_description, "シンプル"
-      = f.text_field :simple_description
-   
-    %p
-      = f.label :detail_description, "詳細"
-      = f.text_area :detail_description, cols: 60, rows: 8
+        %li.form-contents.about-forms
+          %p
+            = f.label :title, "タイトル", class: "mod-form-label"
+            = f.text_field :title, class: "right-input"
 
-      = f.submit "Send"
+          %p
+            = f.label :detail_description, "コメント", class: "mod-form-label"
+            = f.text_area :detail_description, cols: 40, rows: 8 , class: "right-input"
+  
+          %p
+            = f.label :simple_description, "シンプル", class: "mod-form-label"
+            = f.text_field :simple_description, class: "right-input"
+  
 
-
+            = f.submit "投稿する", class: "submit"

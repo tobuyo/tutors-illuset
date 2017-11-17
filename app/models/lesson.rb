@@ -1,7 +1,6 @@
 class Lesson < ApplicationRecord
-
+  acts_as_taggable
   belongs_to :user
-
   validates :user_id, presence: true
   validates :title, presence: true
   validates :price, presence: true

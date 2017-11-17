@@ -6,5 +6,11 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
   has_many :lessons
 
+  include FriendlyId
+  friendly_id :username
+
+  # extend FriendlyId
+  # friendly_id :username, use: :slugged
+
 
 end
