@@ -1,0 +1,124 @@
+.ly-user-show {
+  width: 1300px;
+  margin: auto;
+  height: 1000px;
+  .user-show-main-content {
+    float: left;
+    background-color: #fff;
+    width: 900px;
+    margin: 50px auto auto auto;
+    position: relative;
+    .header {
+      height: 200px;
+      background-color: #ccc;
+    }
+
+    .names {
+      display: table;
+      width: 400px;
+      height: 40px;
+      margin-left: 140px;
+      line-height: 40px;
+    }
+    .name {
+      display: table-cell;
+      text-align: right;
+      font-size: 24px;
+    }
+    .name-id {
+      display: table-cell;
+      font-size: 22px;
+    }
+
+    .information-numbers {
+      display: table;
+      width: 400px;
+      height: 50px;
+      line-height: 50px;
+      font-size: 40px;
+      margin-left: 200px;
+      border-collapse: separate;
+      /* セルの間隔を空ける */
+      border-spacing: 10px 0;
+      /* 左右 上下で記述 */
+    }
+    .mod-numbers {
+      width: 100px;
+      height: 20px;
+      border: 1px solid #ccc;
+      display: table-cell;
+      margin: 10px;
+      text-align: center;
+    }
+
+    .favorite {}
+    .tensaku {}
+
+    .profiles {
+      width: 580px;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      height: 150px;
+      margin: 10px;
+    }
+  }
+
+  .choice-show {
+    text-align: center;
+    color: #fff;
+    width: 100%;
+    padding: 0;
+    li {
+        box-sizing: border-box;
+        width: 300px;
+      border: 1px solid #fff;
+      height: 30px;
+      line-height: 30px;
+      background-color: #2B6CA3;
+      float: left;
+      margin-left: -1px;
+    }
+  }
+
+  .user-show-left-content {
+    float: left;
+    width: 300px;
+    height: 500px;
+    background-color: #ccc;
+    text-align: center;
+    margin: 40px;
+    a {
+      text-decoration: none;
+    }
+    a:link {
+      color: #000;
+    }
+    a:visited {
+      color: #000;
+    }
+    a:hover {
+      color: #000;
+    }
+    a:active {
+      color: #000;
+    }
+  }
+  .mod-left-content {
+    width: 100%;
+    background-color: #fff;
+    border: 1px solid #000;
+    height: 40px;
+    box-sizing: border-box;
+    line-height: 40px;
+    text-align: left;
+    margin-top: -1px;
+    padding-left: 40px;
+    &:hover {
+      background-color: #ccc;
+    }
+  }
+
+  .list-wrapper{
+      
+  }
+}

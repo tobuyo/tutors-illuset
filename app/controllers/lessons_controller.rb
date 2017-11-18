@@ -11,7 +11,7 @@ class LessonsController < ApplicationController
 
   def create
     @lesson = current_user.lessons.build(lesson_params)
-    current_user.tag(@lesson, :with => @lesson.tag_list.join(', '), :on => :tags)
+    #current_user.tag(@lesson, :with => @lesson.tag_list.join(', '), :on => :tags)
     if @lesson.save
       flash[:success] = "Lesson created!"
       redirect_to root_url
@@ -44,7 +44,7 @@ class LessonsController < ApplicationController
   private
   
   def lesson_params
-    params.require(:lesson).permit(:header, :user_id, :title, :price, :simple_description, :detail_description, tag_list: [])
+    params.require(:lesson).permit(:header, :user_id, :title, :price, :simple_description, :detail_description, :tag_list, :tags)
   end
 
   def user_params

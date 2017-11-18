@@ -24,7 +24,7 @@
 	.ly-home-wrap
 		.new-want.mod-news 最新の添削希望
 		.mod-static-lessons-wrappers
-			- @lessons.first(4).each do |lesson|
+			- @lessons.last(4).each do |lesson|
 				= link_to lesson do
 					%article.lessons
 
@@ -44,26 +44,26 @@
 							/ 	= lesson.simple_description
 
 
-		.new-pen.mod-news 最新の赤ペン
-		.mod-static-lessons-wrappers
-			- @lessons.first(4).each do |lesson|
-				= link_to lesson do
-					%article.lessons
+		/ .new-pen.mod-news 最新の赤ペン
+		/ .mod-static-lessons-wrappers
+		/ 	- @lessons.last(4).each do |lesson|
+		/ 		= link_to lesson do
+		/ 			%article.lessons
 
-						.mod-lessons-picture
+		/ 				.mod-lessons-picture
 								
 
-							= image_tag lesson.header.url
+		/ 					= image_tag lesson.header.url
 
-							- user = User.find(lesson.user_id)
-							= image_tag user.image.url, class: "mod-lessons-icon"
+		/ 					- user = User.find(lesson.user_id)
+		/ 					= image_tag user.image.url, class: "mod-lessons-icon"
 
-							%h2.mod-lessons-name 
-								= link_to lesson.title, lesson
+		/ 					%h2.mod-lessons-name 
+		/ 						= link_to lesson.title, lesson
 
-							%h3.mod-lessons-tags
-							/ %p.mod-lessons-textarea 
-							/ 	= lesson.simple_description
+		/ 					%h3.mod-lessons-tags
+		/ 					/ %p.mod-lessons-textarea 
+		/ 					/ 	= lesson.simple_description
 
 		.new-report.mod-news 最新のレポート
 		.mod-static-lessons-wrappers

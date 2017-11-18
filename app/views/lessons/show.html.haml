@@ -1,27 +1,28 @@
-.ly-lesson-show-wrapper
+.ly-lessons_show
 
-  .ly-lesson-sidebar
+  / .ly-lesson-sidebar
+  /   = @user.username
+  /   = link_to image_tag(@user.image.url), user_path, class: "lesson-sidebar-icon"
 
+  .lesson-show-wrapper
+    = image_tag @user.image.url, class: "user-icon"
+    .lesson-header
+      %p.lesson-date
+        = @lesson.created_at
+        = link_to @user.username, user_path
+        さんによって作成されました
+      %h1
+        = @lesson.title
+      %p
+        タグ: #{raw(@lesson.tag_list.map { |t| link_to t, tag_path(t) }.join(', '))}
 
-    = @user.username
-    = link_to image_tag(@user.image.url), user_path, class: "lesson-sidebar-icon"
+    .lesson-sns
+    
+    .lesson-content
+      .lesson-image-wrapper
+        = image_tag @lesson.header.url, class: "lesson-image"
+      = provide(:lesson)
 
-  .ly-lesson-show
-
-    = image_tag @lesson.header.url
-    = provide(:lesson)
-    %h1 講座
-
-    /= image_tag @user.image.url
-    %article.lessons
-    %h2 講座名
-    = @lesson.title
-    = link_to @user.username, user_path
-    %h2 料金
-    = @lesson.price
-    %h2 シンプル説明
-    = @lesson.simple_description
-    %h2 詳細説明
-    = @lesson.detail_description
-    /= image_tag @user.icon.url
+      %p.about-deatil
+        = @lesson.detail_description
 

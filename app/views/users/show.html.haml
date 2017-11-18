@@ -21,7 +21,7 @@
         .li.mod-left-content 講座を全部見る
 
   .user-show-main-content
-    = image_tag @user.image.url, class: "icon"
+    = image_tag @user.image.url, class: "mod-user-icon about-user-show"
     .header
     .names
       .name
@@ -32,15 +32,16 @@
       .mod-numbers.favorite 250
       .mod-numbers.tensaku 250
       .mod-numbers.nanka 250
-    .profiles
 
-      
-      
-      /= image_tag @user.icon.url
-      %h2 ひとこと
-      = @user.simpleintroduce
-      %h2 自己紹介
+    .profiles
       = @user.introduction
+
+    %ul.choice-show
+      %li ​添削希望
+      %li 回答
+      %li レポート
+
+    .list-wrapper
 
       - @lessons.each do |lesson|
         = link_to lesson do

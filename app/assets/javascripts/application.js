@@ -18,48 +18,51 @@
 
 
 //スクロールによって下のフォームが出現する機能
-$(document).ready(function(){
-	$(".characters").not(':animated').hover(function(){
-		$(this)
-		.stop(true, true)
-		.animate({top:"3px"}, 80).animate({top:"10px"}, 150) // first jump
-		.animate({top:"8px"}, 80).animate({top:"13px"}, 150) // second jump
-		.animate({top:"13px"}, 80).animate({top:"20px"}, 150) // the last jump
-	});
+$(document).ready(function() {
+  $(".characters").not(':animated').hover(function() {
+    $(this)
+      .stop(true, true)
+      .animate({ top: "3px" }, 80).animate({ top: "10px" }, 150) // first jump
+      .animate({ top: "8px" }, 80).animate({ top: "13px" }, 150) // second jump
+      .animate({ top: "13px" }, 80).animate({ top: "20px" }, 150) // the last jump
+  });
 });
+
 
 
 //画像を添付したときに表示させる機能
-$(function(){
-    var setFileInput = $('.about-picture'),
+$(function() {
+  var setFileInput = $('.about-picture'),
     setFileImg = $('.new-picture');
 
-    setFileInput.each(function(){
-        var selfFile = $(this),
-        selfInput = $(this).find('input[type=file]'),
-        prevElm = selfFile.find(setFileImg),
-        orgPass = prevElm.attr('src');
- 
-        selfInput.change(function(){
-            var file = $(this).prop('files')[0],
-            fileRdr = new FileReader();
- 
-            if (!this.files.length){
-                prevElm.attr('src', orgPass);
-                return;
-            } else {
-                if (!file.type.match('image.*')){
-                    prevElm.attr('src', orgPass);
-                    return;
-                } else {
-                    fileRdr.onload = function() {
-                        prevElm.attr('src', fileRdr.result);
-                    }
-                    fileRdr.readAsDataURL(file);
-                }
-            }
-        });
+  setFileInput.each(function() {
+    var selfFile = $(this),
+      selfInput = $(this).find('input[type=file]'),
+      prevElm = selfFile.find(setFileImg),
+      orgPass = prevElm.attr('src');
+
+    selfInput.change(function() {
+      var file = $(this).prop('files')[0],
+        fileRdr = new FileReader();
+
+      if (!this.files.length) {
+        prevElm.attr('src', orgPass);
+        return;
+      } else {
+        if (!file.type.match('image.*')) {
+          prevElm.attr('src', orgPass);
+          return;
+        } else {
+          fileRdr.onload = function() {
+            prevElm.attr('src', fileRdr.result);
+          }
+          fileRdr.readAsDataURL(file);
+        }
+      }
     });
+  });
 });
-$(document).on 'ready page:load', ->
-  $('#lesson-tags').tagit()
+
+$(document).on('ready page:load', function() {
+  return $('#lesson-tags').tagit
+});

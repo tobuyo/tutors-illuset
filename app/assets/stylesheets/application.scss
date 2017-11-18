@@ -1,12 +1,16 @@
 @import "normalize.scss";
 @import "users.scss";
+@import "users_show.scss";
+@import "users_edit.scss";
+@import "modules.scss";
 @import "static_pages.scss";
 @import "lessons.scss";
 @import "lessons_new.scss";
+@import "lessons_show.scss";
 @import "login.scss";
 @import "footer.scss";
 @import "jquery.tagit.scss";
-@import "tagit.ui-zendesk.css";
+@import "tagit.ui-zendesk.scss";
 
 li {
   list-style: none;

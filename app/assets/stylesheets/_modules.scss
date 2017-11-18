@@ -1,0 +1,16 @@
+.mod-user-icon {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+  width: 80px;
+  box-sizing: border-box;
+  border-radius: 40px;
+  border: solid 3px #fff;
+  position: absolute;
+  left: 20px;
+  top: 50px;
+  
+  &.about-user-show{
+  	width: 160px;
+  	border-radius: 80px;
+  	left: 10px;
+  }
+}

@@ -1,16 +1,62 @@
 !!!
 %html
   %head
+    %meta{:charset => "utf-8"}/
+    %meta{:content => "ie=edge", "http-equiv" => "x-ua-compatible"}/
+    %meta{:content => "width=910", :name => "viewport"}/
+    %meta{:content => "PENTERS, 添削", :name => "keywords"}/
+    %meta{:content => "PENTERSでイラスト・絵画を添削してもらおう！", :name => "description"}/
+    %meta{:content => "PENTERS", :property => "og:site_name"}/
+    %meta{:content => "PENTERSのヘッドハンティング", :property => "og:title"}/
+    %meta{:content => "", :property => "og:image"}/
+    %meta{:content => "PENTERSでイラスト・絵画を添削してもらおう！", :property => "og:description"}/
+    %meta{:content => "website", :property => "og:type"}/
+    %meta{:content => "https://tutors-illust.herokuapp.com/", :property => "og:url"}/
+    %link{:href => "../images/common/favicon.ico", :rel => "icon", :type => "image/x-icon"}/
+    / Use the title from a page's frontmatter if it has one
+
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
-    %title Tutors
+    %title PENTERS
     = csrf_meta_tags
+    %link{href: "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css", rel: "stylesheet", integrity: "sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN", crossorigin: "anonymous"}
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
 
-    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
-  %body{:style => "background-color: #ccc;"}
-    %img.tutors-logo{:src => "assets/tutors_logo.png"}/
-    %p.notice= notice
-    %p.alert= alert
 
+  %body
+    %a.always-fix-tensaku{src: "#"}
+      %header.ly-header
+        .inner
+          = link_to root_path do
+            %img.tutors-logo{:src => "https://s3-ap-northeast-1.amazonaws.com/tutors-upload-test/assets-images/tutors_logo.png"}/
+          = form_tag user_path(current_user), :method => 'get' ,class: "header-form" do
+            %p
+            = text_field_tag :search, params[:search]
+            = submit_tag "Search", :name => nil  
+
+          = link_to edit_user_registration_path do
+            %i.fa.fa-cog.mod-header-buttons.is-circled
+          = link_to user_path(current_user) do
+            %i.fa.fa-user-circle.mod-header-buttons
+          = link_to user_path(current_user) do
+            %i.fa.fa-star-o.mod-header-buttons.is-circled
+          = link_to user_path(current_user) do
+            %i.fa.fa-comment-o.mod-header-buttons.is-circled
 
     = yield
+
+    .ly-footer
+      .footer-contents
+        %p サイトマップ
+        = link_to "TOPページ", root_path, class: "mod-contents-link"
+        = link_to "マイページ", user_path(current_user), class: "mod-contents-link"
+        = link_to "添削希望", root_path, class: "mod-contents-link"
+        = link_to "赤ペン", root_path, class: "mod-contents-link"
+        = link_to "レポート", root_path, class: "mod-contents-link"
+        = link_to "投稿する", root_path, class: "mod-contents-link"
+        = link_to "TOPページ", root_path, class: "mod-contents-link"
+
+      .footer-rights @2017 PENTER.
+
+    %script{src: "https://code.jquery.com/jquery-3.2.1.min.js"}
+
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'

@@ -1,0 +1,49 @@
+.ly-lessons_show {
+  width: 900px;
+  height: auto;
+  margin: auto;
+  padding: 20px;
+
+  .lesson-header {
+    box-sizing: border-box;
+    border: solid 1px #ccc;
+    background-color: rgba(247, 245, 245, 0.5);
+    height: 100px;
+    padding: 10px;
+    padding-left: 150px;
+  }
+  .lesson-show-wrapper {
+    width: 700px;
+    background-color: #fff;
+    position: relative;
+
+    h1 {
+      font-size: 24px;
+      font-weight: normal;
+      margin: 5px 0;
+    }
+  }
+  .lesson-content{
+  	
+  	padding: 20px;
+  }
+  .lesson-date {
+    font-size: 12px;
+  }
+  .lesson-image {
+    max-width: 300px;
+  }
+  .lesson-image-wrapper{
+  	padding-bottom: 20px;
+  	border-bottom: 1px solid #ccc;
+  }
+  .lesson-sns{
+  	height: 50px;
+  }
+
+  .about-deatil{
+  	padding-top: 20px;
+  	display: block;
+  	line-height: 25px;
+  }
+}
