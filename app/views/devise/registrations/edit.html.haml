@@ -1,55 +1,59 @@
 .ly-users-edit
-  %h2
-    会員情報を変更する
-  = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
-    = devise_error_messages!
-    .field
-      = f.label :username, "ユーザーネーム"
-      %br/
-      = f.text_field :username, autofocus: true
-    .field
-      = f.label :simpleintroduce, "ひとこと"
-      %br/
-      = f.text_field :simpleintroduce, autofocus: true
-    .field
-      = f.label :introduction, "自己紹介"
-      %br/
-      = f.text_field :introduction, autofocus: true
+  .user-edit-main-content
 
-    .field
-      = f.label :image, "アイコン画像"
-      %br/
-      = f.file_field :image
-    .field
-      = f.label :email, "メールアドレス"
-      %br/
-      = f.email_field :email, autofocus: true
-    - if devise_mapping.confirmable? && resource.pending_reconfirmation?
-      %div
-        Currently waiting confirmation for: #{resource.unconfirmed_email}
-    .field
-      = f.label :password, "新しいパスワード"
-      %i (変更のない場合空欄)
-      %br/
-      = f.password_field :password, autocomplete: "off"
-      - if @minimum_password_length
-        %br/
-        %em
-          = @minimum_password_length
-          文字以上の長さ
-    .field
-      = f.label :password_confirmation, "新しいパスワード　確認"
-      %br/
-      = f.password_field :password_confirmation, autocomplete: "off"
-    .field
-      = f.label :current_password, "現在のパスワード"
-      %i (必須)
-      %br/
-      = f.password_field :current_password, autocomplete: "off"
-      
-    .actions
-      = f.submit "更新"
-  %h3 アカウント削除
-  %p
-    #{button_to "アカウントを削除する", registration_path(resource_name), data: { confirm: "まじ？" }, method: :delete}
-  = link_to "トップページへ戻る", :back
+    = image_tag @user.image.url, class: "mod-user-icon about-user-show"
+
+    .header
+
+
+    .content
+      = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
+        = devise_error_messages!
+
+        .field.about-picture
+          = f.label :image, "アイコン画像"
+          %br/
+          = f.file_field :image
+        .field.about-username
+          = f.label :username, "ユーザーネーム"
+          %br/
+          = f.text_field :username, autofocus: true
+        .field
+          = f.label :simpleintroduce, "ひとこと"
+          %br/
+          = f.text_field :simpleintroduce, autofocus: true
+        .field.about-introduction
+          = f.label :introduction, "自己紹介"
+          %br/
+          = f.text_area :introduction, autofocus: true, wrap: "hard"   
+
+        
+        .field
+          = f.label :email, "メールアドレス"
+          %br/
+          = f.email_field :email, autofocus: true
+        - if devise_mapping.confirmable? && resource.pending_reconfirmation?
+          %div
+            Currently waiting confirmation for: #{resource.unconfirmed_email}
+        .field
+          = f.label :password, "新しいパスワード"
+          %i (変更のない場合空欄)
+          %br/
+          = f.password_field :password, autocomplete: "off"
+
+        .field
+          = f.label :password_confirmation, "新しいパスワード"
+          %i (確認)
+          %br/
+          = f.password_field :password_confirmation, autocomplete: "off"
+        .field
+          = f.label :current_password, "現在のパスワード"
+          %i (必須)
+          %br/
+          = f.password_field :current_password, autocomplete: "off"
+          
+        .actions
+          = f.submit "更新", class: "submit"
+      / %h3 アカウント削除
+      / %p
+      /   #{button_to "アカウントを削除する", registration_path(resource_name), data: { confirm: "まじ？" }, method: :delete}

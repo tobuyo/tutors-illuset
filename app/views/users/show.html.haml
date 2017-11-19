@@ -34,7 +34,8 @@
       .mod-numbers.nanka 250
 
     .profiles
-      = @user.introduction
+    
+      = simple_format(@user.introduction)
 
     %ul.choice-show
       %li ​添削希望

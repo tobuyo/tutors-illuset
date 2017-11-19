@@ -1,5 +1,108 @@
-.ly-users-edit{
-  width: 1300px;
+.ly-users-edit {
+  width: 700px;
   margin: auto;
   height: 1000px;
+  background-color: #fff;
+  .user-edit-main-content {
+    float: left;
+    background-color: #fff;
+    width: 700px;
+    margin: auto;
+    position: relative;
+    .header {
+      height: 200px;
+      background-color: #ccc;
+    }
+  }
+
+  .content {
+
+    padding: 25px 50px;
+  }
+
+
+
+  .field {
+
+
+    &.about-picture {
+      width: 100px;
+      height: 70px;
+      
+    line-height: 68px;
+      float: left;
+      input {
+        display: none;
+        /* アップロードボタンのスタイルを無効にする */
+      }
+
+      label {
+        position: relative;
+        display: inline-block;
+        padding: 0.25em 0.5em;
+        text-decoration: none;
+        color: #fff;
+        background: rgba(28, 133, 134, 1);
+        border-radius: 4px;
+        box-shadow: inset 0 2px 0 rgba(255, 255, 255, 0.2), inset 0 -2px 0 rgba(0, 0, 0, 0.05);
+        font-weight: bold;
+        border: solid 2px rgba(0, 0, 0, 1);
+      }
+
+      label:active {
+        box-shadow: 0 0 2px rgba(0, 0, 0, 0.30);
+      }
+    }
+
+    label {
+      font-size: 12px;
+      line-height: 20px;
+    }
+    input {
+      height: 30px;
+      font-size: 16px;
+      line-height: 30px;
+      width: 600px;
+      background-color: rgb(230, 230, 230);
+      box-sizing: border-box;
+      margin-bottom: 20px;
+      border: none;
+    }
+    &.about-username {
+      padding-left: 50px;
+      width: 450px;
+      float: left;
+      input {
+        width: 450px;
+      }
+    }
+    &.about-introduction {
+      textarea {
+        height: 150px;
+        width: 600px;
+        font-size: 16px;
+        background-color: rgb(230, 230, 230);
+        border: none;
+        box-sizing: border-box;
+      }
+    }
+  }
+  .submit {
+    width: 600px;
+    position: relative;
+    display: inline-block;
+    padding: 0.25em 0.5em;
+    text-decoration: none;
+    color: #fff;
+    margin: 10px 0;
+    background: rgba(28, 133, 134, 1);
+    border-radius: 4px;
+    box-shadow: inset 0 2px 0 rgba(255, 255, 255, 0.2), inset 0 -2px 0 rgba(0, 0, 0, 0.05);
+    font-weight: bold;
+    border: solid 2px rgba(0, 0, 0, 1);
+  }
+
+  .submit:active {
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.30);
+  }
 }
