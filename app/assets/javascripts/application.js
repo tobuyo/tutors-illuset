@@ -33,11 +33,11 @@ $(document).ready(function() {
 //画像を添付したときに表示させる機能
 $(function() {
 
-  // var setFileInput = $('.about-picture'),
-  //   setFileImg = $('.new-picture');
+  var setFileInput = $('.about-picture'),
+    setFileImg = $('.new-picture');
 
-  var setFileInput = $('.user-edit-main-content');
-    setFileImg = $('.mod-user-icon');
+  // var setFileInput = $('.user-edit-main-content');
+  //   setFileImg = $('.mod-user-icon');
 
   setFileInput.each(function() {
     var selfFile = $(this),

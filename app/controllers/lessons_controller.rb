@@ -24,7 +24,7 @@ class LessonsController < ApplicationController
     @lesson = Lesson.find(params[:id])
     @comments = @lesson.comments.includes(:user).all
     @comment  = @lesson.comments.build(user_id: current_user.id) if current_user
-    @user = User.friendly.find_by(params[:id])
+    @user = User.friendly.find_by(id: params[:id])
     impressionist(@user, nil, :unique => [:session_hash])
     @page_views = @user.impressionist_count
   end
