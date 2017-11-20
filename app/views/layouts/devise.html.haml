@@ -28,32 +28,16 @@
         .inner
           = link_to root_path do
             %img.tutors-logo{:src => "https://s3-ap-northeast-1.amazonaws.com/tutors-upload-test/assets-images/tutors_logo.png"}/
-          = form_tag user_path(current_user), :method => 'get' ,class: "header-form" do
-            %p
-            = text_field_tag :search, params[:search]
-            = submit_tag "Search", :name => nil  
+          - if user_signed_in?
+            = form_tag user_path(current_user), :method => 'get' ,class: "header-form" do
+              %p
+              = text_field_tag :search, params[:search]
+              = submit_tag "Search", :name => nil  
 
-          = link_to edit_user_registration_path do
-            %i.fa.fa-cog.mod-header-buttons.is-circled
-          = link_to user_path(current_user) do
-            %i.fa.fa-user-circle.mod-header-buttons
-          = link_to user_path(current_user) do
-            %i.fa.fa-star-o.mod-header-buttons.is-circled
-          = link_to user_path(current_user) do
-            %i.fa.fa-comment-o.mod-header-buttons.is-circled
 
     = yield
 
     .ly-footer
-      .footer-contents
-        %p サイトマップ
-        = link_to "TOPページ", root_path, class: "mod-contents-link"
-        = link_to "マイページ", user_path(current_user), class: "mod-contents-link"
-        = link_to "添削希望", root_path, class: "mod-contents-link"
-        = link_to "赤ペン", root_path, class: "mod-contents-link"
-        = link_to "レポート", root_path, class: "mod-contents-link"
-        = link_to "投稿する", root_path, class: "mod-contents-link"
-        = link_to "TOPページ", root_path, class: "mod-contents-link"
 
       .footer-rights @2017 PENTER.
 

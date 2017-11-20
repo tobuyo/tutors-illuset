@@ -8,12 +8,40 @@
   position: absolute;
   left: 20px;
   top: 50px;
-    background-color: #fff;
-  
-  &.about-user-show{
-  	width: 160px;
+  background-color: #fff;
+
+  &.about-user-show {
+    width: 160px;
     height: 160px;
-  	border-radius: 80px;
-  	left: 10px;
+    border-radius: 80px;
+    left: 10px;
   }
+  &.about-lesson-show{
+    width: 110px;
+    height: 110px;
+    border-radius: 55px;
+    top: 30px;
+  }
+}
+
+.mod-submit {
+  width: 445px;
+  position: relative;
+  display: inline-block;
+  padding: 0.25em 0.5em;
+  text-decoration: none;
+  color: #fff;
+  margin: 10px 0;
+  background: rgba(28, 133, 134, 1);
+  border-radius: 4px;
+  box-shadow: inset 0 2px 0 rgba(255, 255, 255, 0.2), inset 0 -2px 0 rgba(0, 0, 0, 0.05);
+  font-weight: bold;
+  border: solid 2px rgba(0, 0, 0, 1);
+  &.about-lesson-show{
+    width: 600px;
+  }
+}
+
+.mod-submit:active {
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.30);
 }

@@ -1,0 +1,11 @@
+.ly-comments{
+	.field{
+		&.is-hidden{
+			display: none;
+		}
+	}
+	textarea{
+		width: 600px;
+		height: 300px;
+	}
+}

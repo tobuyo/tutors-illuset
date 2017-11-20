@@ -5,7 +5,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   has_many :lessons
-
+  has_many :comments
+  is_impressionable
   include FriendlyId
   friendly_id :username
 

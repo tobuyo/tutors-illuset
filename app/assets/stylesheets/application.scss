@@ -5,6 +5,7 @@
 @import "modules.scss";
 @import "static_pages.scss";
 @import "lessons.scss";
+@import "comments.scss";
 @import "lessons_new.scss";
 @import "lessons_show.scss";
 @import "login.scss";
@@ -14,6 +15,10 @@
 
 li {
   list-style: none;
+}
+@import url(http://fonts.googleapis.com/earlyaccess/notosansjapanese.css);
+body {
+  font-family: 'Noto Sans Japanese', sans-serif;
 }
 
 p {

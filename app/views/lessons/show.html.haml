@@ -5,18 +5,26 @@
   /   = link_to image_tag(@user.image.url), user_path, class: "lesson-sidebar-icon"
 
   .lesson-show-wrapper
-    = image_tag @user.image.url, class: "mod-user-icon"
+    = image_tag @user.image.url, class: "mod-user-icon about-lesson-show"
     .lesson-header
       %p.lesson-date
         = @lesson.created_at
         = link_to @user.username, user_path
         さんによって作成されました
+
       %h1
         = @lesson.title
       %p
         タグ: #{raw(@lesson.tag_list.map { |t| link_to t, tag_path(t) }.join(', '))}
 
-    .lesson-sns
+    .lesson-sns{style: "text-align: right; font-size: 20px; padding: 10px;"}
+      .view-count
+        %i{class: "fa fa-eye"}
+        = number_with_delimiter(@page_views)
+      .view-count
+        %i{class: "fa fa-comment"}
+        = @comments.count
+
     
     .lesson-content
       .lesson-image-wrapper
@@ -24,5 +32,21 @@
       = provide(:lesson)
 
       %p.about-deatil
-        = @lesson.detail_description
+        = simple_format(@lesson.detail_description)
 
+    .lesson-comments
+      %h2 ー回答ー
+      - @comments.each do |comment|
+        .each-comment
+          = link_to image_tag(comment.user.image,{class: "comments-icon"}), user_path(comment.user.id)
+          %p.answer-man
+            = comment.user.username
+          %br
+          %p= simple_format(comment.body)
+          - if user_signed_in? && comment.user == current_user
+            %p.delete-button= link_to '回答を削除する', comment_path(comment), method: :delete
+            %time{:datetime => "#{comment.created_at}"}
+              = time_ago_in_words(comment.created_at)
+
+      - if user_signed_in?
+        = render 'comments/form'

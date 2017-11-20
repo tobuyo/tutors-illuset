@@ -1,5 +1,5 @@
 .ly-lessons_show {
-  width: 900px;
+  width: 700px;
   height: auto;
   margin: auto;
   padding: 20px;
@@ -45,5 +45,55 @@
   	padding-top: 20px;
   	display: block;
   	line-height: 25px;
+  }
+
+
+  h2{
+    padding: 0;
+    margin: 0;
+    margin-top: -40px;
+    font-weight: normal;
+    text-align: center;
+  }
+
+  .lesson-comments{
+    border-top: 1px solid #ccc;
+    box-sizing: border-box;
+    padding: 50px;
+  }
+  label{
+    font-size: 12px;
+    display: block;
+    line-height: 20px;
+    margin: 20px 0 10px;
+  }
+  .delete-button{
+  }
+
+  .each-comment{
+    border: 1px solid #ccc;
+    margin: 20px 0;
+  }
+  .comments-icon{
+    width: 60px;
+    height: 60px;
+    border-radius: 30px;
+    display: inline-block;
+  }
+  .answer-man{
+    display: inline-block;
+    height: 60px;
+    line-height: 60px;
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+  .view-count{
+    font-size: 12px;
+    float: right;
+    margin-right: 10px;
+    background-color: green;
+    padding: 3px 15px;
+    color: white;
+    border-radius: 5px;
   }
 }

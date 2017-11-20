@@ -41,6 +41,8 @@ gem 'acts-as-taggable-on'
 
 gem 'friendly_id', '~> 5.1.0'
 
+gem "ransack"
+
 gem 'jquery-ui-rails'
 
 gem 'carrierwave'
@@ -48,6 +50,8 @@ gem 'carrierwave'
 gem 'fog'
 
 gem 'aws-sdk'
+
+gem 'impressionist'
 
 gem 'devise'
 gem 'erb2haml'
