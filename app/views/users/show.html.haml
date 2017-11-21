@@ -34,6 +34,8 @@
       .mod-numbers.nanka 250
 
     .profiles
+      
+
     
       = simple_format(@user.introduction)
 
@@ -51,11 +53,9 @@
               .mod-lessons-title 
                 %h2.mod-lessons-name 
                   = link_to lesson.title, lesson
-                
 
               = image_tag lesson.header.url
 
               %h3.mod-lessons-tags
               %p.mod-lessons-textarea 
                 = lesson.simple_description
-

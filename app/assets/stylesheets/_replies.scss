@@ -1,0 +1,16 @@
+.ly-replies{
+	.field{
+		&.is-hidden{
+			display: none;
+		}
+	}
+	label{
+		text-align: center;
+	}
+	textarea{
+		display: block;
+		width: 400px;
+		margin: auto;
+		height: 100px;
+	}
+}

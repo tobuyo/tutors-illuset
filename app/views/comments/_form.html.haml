@@ -9,10 +9,10 @@
 
     .field.is-hidden
       = f.label :user_id
-      = f.number_field :user_id
+      = f.hidden_field :user_id
     .field.is-hidden
       = f.label :lesson_id
-      = f.number_field :lesson_id
+      = f.hidden_field :lesson_id
     .field
       = f.label :body, "回答を書く"
       = f.text_area :body

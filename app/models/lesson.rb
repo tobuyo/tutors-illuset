@@ -1,5 +1,6 @@
 class Lesson < ApplicationRecord
   acts_as_taggable
+  acts_as_taggable_on :tags
   belongs_to :user, optional: true 
   has_many :comments
   validates :user_id, presence: true

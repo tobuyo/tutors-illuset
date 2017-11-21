@@ -1,0 +1,18 @@
+.ly-replies
+  = form_for @reply do |f|
+    - if @reply.errors.any?
+      #error_explanation
+        %h2= "#{pluralize(@reply.errors.count, "error")} prohibited this reply from being saved:"
+        %ul
+          - @reply.errors.full_messages.each do |message|
+            %li= message  
+
+    .field
+      = f.hidden_field :user_id
+    .field
+      = f.hidden_field :comment_id, value: comment_id
+    .field
+      = f.label :body, "この回答に対するコメント"
+      = f.text_area :body
+    .actions
+      = f.submit 'これでコメントする', class: "mod-submit about-lesson-show"

@@ -3,6 +3,7 @@ class LessonsController < ApplicationController
 
   def index
     @lessons = Lesson.all.order("created_at DESC")
+
   end
 
   def new
@@ -24,7 +25,11 @@ class LessonsController < ApplicationController
     @lesson = Lesson.find(params[:id])
     @comments = @lesson.comments.includes(:user).all
     @comment  = @lesson.comments.build(user_id: current_user.id) if current_user
-    @user = User.friendly.find_by(id: params[:id])
+    #binding.pry
+    @replies = @comment.replies.includes(:user, :comment).all
+    
+    @reply  = @comment.replies.build(user_id: current_user.id) if current_user
+    @user = User.friendly.find_by(params[:id])
     impressionist(@user, nil, :unique => [:session_hash])
     @page_views = @user.impressionist_count
   end
@@ -43,6 +48,12 @@ class LessonsController < ApplicationController
     if lesson.user_id == current_user.id
       @lesson.update
     end
+  end
+
+  def tag_cloud
+    # order('count DESC')でカウントの多い順にタグを並べています
+    @tags = Lesson.tag_counts_on(:tags).order('count DESC')
+    
   end
 
   private

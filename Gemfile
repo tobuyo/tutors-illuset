@@ -37,13 +37,13 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-gem 'acts-as-taggable-on'
-
 gem 'friendly_id', '~> 5.1.0'
 
 gem "ransack"
 
 gem 'jquery-ui-rails'
+
+gem 'acts-as-taggable-on', github: 'mbleigh/acts-as-taggable-on'
 
 gem 'carrierwave'
 
