@@ -7,8 +7,7 @@
 		%img.characters.is-right{src: "https://s3-ap-northeast-1.amazonaws.com/tutors-upload-test/assets-images/chara2.png"}
 
 .ly-static-navi
-	- @tags.first(20).each do |tags|
-		= tags.name
+
 
 
 
@@ -26,16 +25,16 @@
 		.attention 新着赤ペンがありました！
 
 	.ly-home-wrap
-		.new-want.mod-news 最新の添削希望
+		.new-want.mod-news 最新の質問
 		.mod-static-lessons-wrappers
-			- @lessons.last(4).each do |lesson|
+			- @lessons.last(3).each do |lesson|
 				= link_to lesson do
 					%article.lessons
 
 						.mod-lessons-picture
 								
 
-							= image_tag lesson.header.url
+							= image_tag lesson.header.thumb.url
 
 							- user = User.find(lesson.user_id)
 							= image_tag user.image.url, class: "mod-lessons-icon"
@@ -48,44 +47,18 @@
 							/ 	= lesson.simple_description
 
 
-		/ .new-pen.mod-news 最新の赤ペン
-		/ .mod-static-lessons-wrappers
-		/ 	- @lessons.last(4).each do |lesson|
-		/ 		= link_to lesson do
-		/ 			%article.lessons
-
-		/ 				.mod-lessons-picture
-								
-
-		/ 					= image_tag lesson.header.url
-
-		/ 					- user = User.find(lesson.user_id)
-		/ 					= image_tag user.image.url, class: "mod-lessons-icon"
-
-		/ 					%h2.mod-lessons-name 
-		/ 						= link_to lesson.title, lesson
-
-		/ 					%h3.mod-lessons-tags
-		/ 					/ %p.mod-lessons-textarea 
-		/ 					/ 	= lesson.simple_description
-
 		.new-report.mod-news 最新のレポート
 		.mod-static-lessons-wrappers
-			- @lessons.first(4).each do |lesson|
+			- @lessons.last(3).each do |lesson|
 				= link_to lesson do
 					%article.lessons
-
 						.mod-lessons-picture
-								
-
-							= image_tag lesson.header.url
-
+							= image_tag lesson.header.thumb.url
 							- user = User.find(lesson.user_id)
 							= image_tag user.image.url, class: "mod-lessons-icon"
 
 							%h2.mod-lessons-name 
-								= link_to lesson.title, lesson
-
+								= lesson.title
 							%h3.mod-lessons-tags
 							/ %p.mod-lessons-textarea 
 							/ 	= lesson.simple_description

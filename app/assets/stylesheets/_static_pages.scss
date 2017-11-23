@@ -20,7 +20,7 @@
         font-size: 70px;
         letter-spacing: 20px;
         margin-top: 20px;
-         text-shadow: rgba(0, 0, 0, 0.4) 0px 4px 4px;
+        text-shadow: rgba(0, 0, 0, 0.4) 0px 4px 4px;
       }
     }
   }
@@ -118,25 +118,25 @@
   padding: 0 20px;
   box-sizing: border-box;
   position: relative;
-  .right-tag-title{
-	  height: 22px;
-  	font-size: 16px;
-	  border-bottom: 1px solid #ccc;
-	  margin-bottom: 10px;
-		margin-top: 10px;
-	}
-	.mod-tag{
-		background-color: rgba(189, 191, 55, 1);
-		width: auto;
-		height: 15px;
-		font-size: 12px;
-		border-radius: 5px;
-		text-align: center;
-		color: #fff;
-		float: left;
-		margin: 2px;
-		padding: 2px 5px;
-	}
+  .right-tag-title {
+    height: 22px;
+    font-size: 16px;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 10px;
+    margin-top: 10px;
+  }
+  .mod-tag {
+    background-color: rgba(189, 191, 55, 1);
+    width: auto;
+    height: 15px;
+    font-size: 12px;
+    border-radius: 5px;
+    text-align: center;
+    color: #fff;
+    float: left;
+    margin: 2px;
+    padding: 2px 5px;
+  }
   .left-header {
     height: 150px;
     background-color: #000;
@@ -201,7 +201,7 @@
     font-size: 20px;
     border-bottom: 1px solid #ccc;
     margin-bottom: 10px;
-		margin-top: 10px;
+    margin-top: 10px;
   }
   .is-want {}
   .is-pen {}
@@ -213,30 +213,62 @@
 }
 
 .mod-lessons-picture {
+  position: relative;
+  img {
+    width: 180px;
+    max-height: 130px;
+    margin: 1px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+  }
   .mod-lessons-icon {
     width: 30px;
     height: 30px;
+    margin: 5px;
     border-radius: 25px;
     overflow: hidden;
   }
 }
 
-.ly-static-contents-wrapper{
-	width: 1200px;
-	height: 900px;
-	margin: auto;
+.mod-lessons-name {
+  font-size: 12px;
+  text-align: left;
+  position: absolute;
+  margin: 0;
+  left: 45px;
+  right: 0;
+  top: 140px;
+  overflow: hidden;
+}
+
+.ly-static-contents-wrapper {
+  width: 1200px;
+  height: 900px;
+  margin: auto;
+}
+
+.lessons {
+  width: 182px;
+  height: 180px;
+  // background-color: rgba(204, 204, 204, 0.3);
+  background-color: #FFF; 
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
+  float: left;
+  margin-right: 4px;
+  box-sizing: border-box;
 }
 
 
 
-@media screen and (min-width:768px) and ( max-width:1200px) {
-	.ly-static-contents-wrapper{
-		width: 880px;
-		height: 900px;
-		margin: auto;
-	}
-	.ly-static-right {
-		display: none;
-	}
 
+@media screen and (min-width:768px) and ( max-width:1200px) {
+  .ly-static-contents-wrapper {
+    width: 880px;
+    height: 900px;
+    margin: auto;
+  }
+  .ly-static-right {
+    display: none;
+  }
 }

@@ -12,6 +12,9 @@
     .field
       = f.hidden_field :comment_id, value: comment_id
     .field
+      = f.label :replyimage, "画像を選択します"
+      = f.file_field :replyimage
+    .field
       = f.label :body, "この回答に対するコメント"
       = f.text_area :body
     .actions

@@ -43,6 +43,9 @@
             = comment.user.username
           %br
           %p= simple_format(comment.body)
+          .lesson-image-wrapper
+            - unless comment.commentimage.blank?
+              = image_tag comment.commentimage.url, class: "lesson-image"
           - if user_signed_in? && comment.user == current_user
             %p.delete-button= link_to '回答を削除する', comment_path(comment), method: :delete
             %time{:datetime => "#{comment.created_at}"}
@@ -59,6 +62,9 @@
                 = reply.user.username
               %br
               %p= simple_format(reply.body)
+              
+              - unless reply.replyimage.blank?
+                = image_tag reply.replyimage.url, class: "lesson-image"
               - if user_signed_in? && reply.user == current_user
                 %p.delete-button= link_to '回答を削除する', reply_path(reply), method: :delete
                 %time{:datetime => "#{reply.created_at}"}
