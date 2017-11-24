@@ -1,9 +1,11 @@
 class LessonsController < ApplicationController
 
-
   def index
     @lessons = Lesson.all.order("created_at DESC")
-
+    @search = Lesson.ransack(params[:q]) # この行を追加
+    @searched = @search.result.includes(:user) #この行を修正
+    @taglessons = Lesson.tagged_with(params[:format])
+    @tag = params[:format]
   end
 
   def new
@@ -50,6 +52,7 @@ class LessonsController < ApplicationController
     end
   end
 
+
   def tag_cloud
     # order('count DESC')でカウントの多い順にタグを並べています
     @tags = Lesson.tag_counts_on(:tags).order('count DESC')
@@ -59,7 +62,7 @@ class LessonsController < ApplicationController
   private
   
   def lesson_params
-    params.require(:lesson).permit(:header, :user_id, :title, :price, :simple_description, :detail_description, :tag_list, :tags)
+    params.require(:lesson).permit(:header, :user_id, :title, :price, :simple_description, :detail_description, :tag_list, :tags, :q, :tagsname, :format)
   end
 
   def user_params
@@ -67,8 +70,4 @@ class LessonsController < ApplicationController
   end
 
 
-  # private
-  # def lesson_params
-  #   params.permit(:,:)
-  # end
 end

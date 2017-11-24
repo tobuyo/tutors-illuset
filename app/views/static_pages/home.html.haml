@@ -34,10 +34,10 @@
 						.mod-lessons-picture
 								
 
-							= image_tag lesson.header.thumb.url
+							- unless lesson.header.thumb.url.blank?
+								= image_tag lesson.header.thumb.url
 
-							- user = User.find(lesson.user_id)
-							= image_tag user.image.url, class: "mod-lessons-icon"
+							= image_tag lesson.user.image.url, class: "mod-lessons-icon"
 
 							%h2.mod-lessons-name 
 								= link_to lesson.title, lesson
@@ -53,9 +53,9 @@
 				= link_to lesson do
 					%article.lessons
 						.mod-lessons-picture
-							= image_tag lesson.header.thumb.url
-							- user = User.find(lesson.user_id)
-							= image_tag user.image.url, class: "mod-lessons-icon"
+							- unless lesson.header.thumb.url.blank?
+								= image_tag lesson.header.thumb.url
+							= image_tag lesson.user.image.thumb.url, class: "mod-lessons-icon"
 
 							%h2.mod-lessons-name 
 								= lesson.title
@@ -67,6 +67,9 @@
 		.right-tag-title 人気のタグ
 		.tags
 			- @tags.first(20).each do |tags|
-				= link_to tags.name, "#", class: "mod-tag"
+				- @tagsname = tags.name
+				= link_to tags.name, lessons_path(@tagsname), class: "mod-tag"
+
+      
 
 	/ .ly-static-right

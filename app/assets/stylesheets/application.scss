@@ -11,7 +11,6 @@
 @import "lessons_show.scss";
 @import "login.scss";
 @import "footer.scss";
-@import "jquery.tagit.scss";
 @import "tagit.ui-zendesk.scss";
 
 li {
@@ -42,6 +41,34 @@ a:active { color: #000 }
 a{
   text-decoration: none;
 }
+
+
+.search-form {
+    width: 156px;
+    position: absolute;
+    top: 10px;
+    border-radius: 10px;
+    left: 150px;
+}  
+.search-text  {      
+    width: 156px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+}
+
+.search-submit {
+    position: absolute;
+    top: 0px;
+    left: 110px;
+    margin-top: 5px;
+    height: 15px;
+    line-height: 2px;
+    border-radius: 5px;
+    background-color: #fff;
+    border: none;
+    color: #ccc;
+}  
+
 
 .always-fix-tensaku {
   position: fixed;
@@ -79,7 +106,6 @@ a{
 }
 
 
-
 .ly-form-content {
   width: 400px;
   height: 400px;
@@ -98,6 +124,7 @@ a{
   .inner {
     width: 910px;
     margin: auto;
+    position: relative;
   }
   .header-to-mypage {
     display: block;
@@ -118,8 +145,6 @@ a{
     border: 1px solid #ccc;
   }
 }
-
-
 
 
 .mod-static-lessons-wrappers {

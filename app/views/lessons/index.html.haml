@@ -1,6 +1,16 @@
-%ul.ly-all-users
-  = @lessons.each do |lesson| 
+%ul.search-lessons
+  
+  
+  - unless @taglessons.present?
+    - @show = @searched
+  - else
+    - @show = @taglessons
+    %p
+      = @tag
+      でのタグ検索
+  - @show.each do |lesson| 
     = link_to lesson do
-      %li.mod-user-profile
-        = link_to lesson.title, lesson
-        = lesson.simple_description
+      %li.mod-lessons-picture.is-search
+        = link_to image_tag(lesson.header.thumb,{class: " "}), lesson_path(lesson.id)
+        = image_tag lesson.user.image.thumb.url, class: "mod-lessons-icon"
+        = link_to lesson.title, lesson, class: "mod-lessons-name"

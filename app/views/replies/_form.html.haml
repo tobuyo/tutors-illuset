@@ -5,7 +5,7 @@
         %h2= "#{pluralize(@reply.errors.count, "error")} prohibited this reply from being saved:"
         %ul
           - @reply.errors.full_messages.each do |message|
-            %li= message  
+            %li= message
 
     .field
       = f.hidden_field :user_id
