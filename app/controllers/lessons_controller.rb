@@ -24,7 +24,7 @@ class LessonsController < ApplicationController
   end
 
   def show
-    @lesson = Lesson.find(params[:id])
+    @lesson = Lesson.includes(:user).find(params[:id])
     @comments = @lesson.comments.includes(:user).all
     @comment  = @lesson.comments.build(user_id: current_user.id) if current_user
     #binding.pry
@@ -46,9 +46,10 @@ class LessonsController < ApplicationController
   end
 
   def update
-    @lesson.find(params[:id])
-    if lesson.user_id == current_user.id
-      @lesson.update
+    @lesson = Lesson.find(params[:id])
+    if @lesson.user_id == current_user.id
+      @lesson.update(lesson_params)
+      redirect_to lesson_path
     end
   end
 
@@ -62,7 +63,7 @@ class LessonsController < ApplicationController
   private
   
   def lesson_params
-    params.require(:lesson).permit(:header, :user_id, :title, :price, :simple_description, :detail_description, :tag_list, :tags, :q, :tagsname, :format)
+    params.require(:lesson).permit(:header, :user_id, :title, :price, :simple_description, :detail_description, :tag_list, :tags, :q, :tagsname, :format, :flag)
   end
 
   def user_params

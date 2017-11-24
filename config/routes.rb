@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   resources :replies
+  resources :reports
   resources :comments
   devise_for :users, :controllers => {
     :sessions      => "users/sessions",

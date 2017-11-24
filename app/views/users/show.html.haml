@@ -23,6 +23,8 @@
   .user-show-main-content
     = image_tag @user.image.thumb.url, class: "mod-user-icon about-user-show"
     .header
+      - unless @user.icon.thumb.url.blank?
+        = image_tag @user.icon.thumb.url, class: "user-header"
     .names
       .name
         = @user.username

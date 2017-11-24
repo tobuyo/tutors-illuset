@@ -1,0 +1,7 @@
+- if user_signed_in? && @lesson.user.id == current_user.id
+  = form_for @lesson do |f|
+    .field
+      = f.label :flag, "この回答に対するコメント"
+      = f.text_area :flag
+    .actions
+      = f.submit 'これでコメントする', class: "mod-submit about-lesson-show"

@@ -3,13 +3,18 @@
 
     = image_tag @user.image.url, class: "mod-user-icon about-user-show"
 
-    .header
+    
 
 
-    .content
-      = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
-        = devise_error_messages!
-
+    = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
+      = devise_error_messages!
+      .header
+        = image_tag @user.icon.url, class: "user-header"
+        .field.about-header
+          = f.label :icon, "ヘッダー画像変更"
+          %br/
+          = f.file_field :icon
+      .content
         .field.about-picture
           = f.label :image, "アイコン画像"
           %br/
@@ -25,9 +30,7 @@
         .field.about-introduction
           = f.label :introduction, "自己紹介"
           %br/
-          = f.text_area :introduction, autofocus: true, wrap: "hard"   
-
-        
+          = f.text_area :introduction, autofocus: true, wrap: "hard"             
         .field
           = f.label :email, "メールアドレス"
           %br/
@@ -39,8 +42,7 @@
           = f.label :password, "新しいパスワード"
           %i (変更のない場合空欄)
           %br/
-          = f.password_field :password, autocomplete: "off"
-
+          = f.password_field :password, autocomplete: "off"          
         .field
           = f.label :password_confirmation, "新しいパスワード"
           %i (確認)
@@ -54,6 +56,6 @@
           
         .actions
           = f.submit "更新", class: "submit"
-      / %h3 アカウント削除
-      / %p
-      /   #{button_to "アカウントを削除する", registration_path(resource_name), data: { confirm: "まじ？" }, method: :delete}
+    / %h3 アカウント削除
+    / %p
+    /   #{button_to "アカウントを削除する", registration_path(resource_name), data: { confirm: "まじ？" }, method: :delete}

@@ -3,6 +3,14 @@
   margin: auto;
   height: 1000px;
   background-color: #fff;
+  .user-header {
+    background-color: #000;
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+  }
   .user-edit-main-content {
     float: left;
     background-color: #fff;
@@ -12,24 +20,58 @@
     .header {
       height: 200px;
       background-color: #ccc;
+      position: relative;
     }
   }
 
   .content {
-
-    padding: 25px 50px;
+    padding: 5px 50px;
   }
-
-
 
   .field {
 
+    &.about-header {
+      display: block;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      z-index: 1000;
+
+      &:hover {
+        background-color: #000;
+        opacity: 0.3;
+        label {
+        position: relative;
+        display: block;
+        width: 100%;
+        height: 200px;
+        font-size: 16px;
+        line-height: 200px;
+        margin: auto;
+        text-align: center;
+        padding: 0.25em 0.5em;
+        text-decoration: none;
+        color: #fff;
+        border-radius: 4px;
+        font-weight: bold;
+      }
+
+      label:active {
+        box-shadow: 0 0 2px rgba(0, 0, 0, 0.30);
+      }
+      }
+      input {
+        display: none;
+        /* アップロードボタンのスタイルを無効にする */
+      }
+      
+
+    }
 
     &.about-picture {
       width: 100px;
       height: 70px;
-      
-    line-height: 68px;
+      line-height: 68px;
       float: left;
       input {
         display: none;

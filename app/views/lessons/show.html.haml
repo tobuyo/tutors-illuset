@@ -5,7 +5,7 @@
   /   = link_to image_tag(@user.image.url), user_path, class: "lesson-sidebar-icon"
 
   .lesson-show-wrapper
-    = image_tag @user.image.url, class: "mod-user-icon about-lesson-show"
+    = image_tag @lesson.user.image.url, class: "mod-user-icon about-lesson-show"
     .lesson-header
       %p.lesson-date
         = @lesson.created_at
@@ -15,7 +15,7 @@
       %h1
         = @lesson.title
       %p
-        タグ: #{raw(@lesson.tag_list.map { |t| link_to t, tag_path(t) }.join(', '))}
+        タグ: #{raw(@lesson.tag_list.map { |t| link_to t, lessons_path(@tagsname = t) }.join(', '))}
 
     .lesson-sns{style: "text-align: right; font-size: 20px; padding: 10px;"}
       .view-count
@@ -24,6 +24,11 @@
       .view-count
         %i{class: "fa fa-comment"}
         = @comments.count
+      .view-count
+        - if @lesson.flag == 1
+          回答募集中
+        - else
+          回答締め切り
 
     .lesson-content
       .lesson-image-wrapper
@@ -69,8 +74,19 @@
                 %p.delete-button= link_to '回答を削除する', reply_path(reply), method: :delete
                 %time{:datetime => "#{reply.created_at}"}
                   = time_ago_in_words(reply.created_at)
-          - if user_signed_in?
+          - if user_signed_in? && @lesson.flag == 1
             = render 'replies/form', comment_id: comment.id
 
-      - if user_signed_in?
+      - if user_signed_in? && @lesson.flag == 1
         = render 'comments/form'
+
+      - if user_signed_in? && @lesson.user.id == current_user.id
+        = form_for @lesson do |f|
+          %label
+            = f.radio_button :flag, 1
+            回答を受け付ける
+          %label
+            = f.radio_button :flag, 2
+            回答を締め切る
+          .actions
+            = f.submit '更新', class: "mod-submit about-lesson-show"

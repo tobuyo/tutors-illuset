@@ -1,0 +1,42 @@
+%h1 Listing reports
+
+%table
+  %thead
+    %tr
+      %th User
+      %th Comment
+      %th Body
+      %th
+      %th
+      %th
+
+  %tbody
+    - @reports.each do |report|
+      %tr
+        %td= report.user_id
+        %td= report.comment_id
+        %td= report.body
+        %td= link_to 'Show', report
+        %td= link_to 'Edit', edit_report_path(report)
+        %td= link_to 'Destroy', report, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+.ly-reports
+  = form_for @report do |f|
+
+    .field
+      = f.hidden_field :user_id
+    .field
+      = f.hidden_field :comment_id, value: comment_id
+    .field
+      = f.label :reportimage, "画像を選択します"
+      = f.file_field :reportimage
+    .field
+      = f.label :body, "この回答に対するコメント"
+      = f.text_area :body
+    .actions
+      = f.submit 'これでコメントする', class: "mod-submit about-lesson-show"
+
+
+= link_to 'New Reply', new_report_path
