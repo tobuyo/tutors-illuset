@@ -51,7 +51,7 @@ gem 'carrierwave'
 gem 'fog'
 
 gem 'aws-sdk'
-
+gem 'compass-rails', github: 'Compass/compass-rails'
 gem 'impressionist'
 
 gem 'devise'

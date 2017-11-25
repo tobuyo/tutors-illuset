@@ -23,9 +23,9 @@
       margin: 5px 0;
     }
   }
-  .lesson-content{
-  	
-  	padding: 20px;
+  .lesson-content {
+
+    padding: 20px;
   }
   .lesson-date {
     font-size: 12px;
@@ -33,22 +33,22 @@
   .lesson-image {
     max-width: 300px;
   }
-  .lesson-image-wrapper{
-  	padding-bottom: 20px;
-  	border-bottom: 1px solid #ccc;
+  .lesson-image-wrapper {
+    padding-bottom: 20px;
+    border-bottom: 1px solid #ccc;
   }
-  .lesson-sns{
-  	height: 50px;
-  }
-
-  .about-deatil{
-  	padding-top: 20px;
-  	display: block;
-  	line-height: 25px;
+  .lesson-sns {
+    height: 50px;
   }
 
+  .about-deatil {
+    padding-top: 20px;
+    display: block;
+    line-height: 25px;
+  }
 
-  h2{
+
+  h2 {
     padding: 0;
     margin: 0;
     margin-top: -40px;
@@ -56,48 +56,47 @@
     text-align: center;
   }
 
-  .lesson-comments{
+  .lesson-comments {
     border-top: 1px solid #ccc;
     box-sizing: border-box;
     padding: 50px;
   }
-  label{
+  label {
     font-size: 12px;
     display: block;
     line-height: 20px;
     margin: 20px 0 10px;
   }
-  .delete-button{
-  }
+  .delete-button {}
 
-  .each-comment{
+  .each-comment {
     border: 1px solid #ccc;
     margin: 20px 0;
-    &.is-reply{
+    &.is-reply {
       padding-left: 30px;
       border: none;
       border-top: 1px solid #ccc;
     }
   }
-  .comments-icon{
+  .comments-icon {
     width: 60px;
     height: 60px;
     border-radius: 30px;
     display: inline-block;
-    &.is-reply{
+    &.is-reply {
       width: 50px;
       height: 50px;
       border-radius: 25px;
     }
   }
-  .answer-man{
+  .answer-man {
     display: inline-block;
     height: 60px;
     line-height: 60px;
     font-size: 20px;
     margin-bottom: 20px;
   }
-  .view-count{
+  .view-count {
     font-size: 12px;
     float: right;
     margin-right: 10px;
@@ -105,5 +104,17 @@
     padding: 3px 15px;
     color: white;
     border-radius: 5px;
+  }
+  .flag-field {
+    background-color: #ccc;
+    padding: 25px 20px;
+  }
+  .report-field {
+
+    background-color: #ff9000;
+    padding: 25px 20px;
+    textarea {
+      width: 400px;
+    }
   }
 }

@@ -29,7 +29,7 @@
 	.ly-home-wrap
 		.new-want.mod-news 最新の質問
 		.mod-static-lessons-wrappers
-			- @lessons.last(3).each do |lesson|
+			- @lessons.last(8).each do |lesson|
 				= link_to lesson do
 					%article.lessons
 
@@ -51,16 +51,16 @@
 
 		.new-report.mod-news 最新のレポート
 		.mod-static-lessons-wrappers
-			- @lessons.last(3).each do |lesson|
-				= link_to lesson do
+			- @reports.last(8).each do |report|
+				= link_to report do
 					%article.lessons
 						.mod-lessons-picture
-							- unless lesson.header.thumb.url.blank?
-								= image_tag lesson.header.thumb.url
-							= image_tag lesson.user.image.thumb.url, class: "mod-lessons-icon"
+							- unless report.reportimage.thumb.url.blank?
+								= image_tag report.reportimage.thumb.url
+							= image_tag report.user.image.thumb.url, class: "mod-lessons-icon"
 
 							%h2.mod-lessons-name 
-								= lesson.title
+								= report.title
 							%h3.mod-lessons-tags
 							/ %p.mod-lessons-textarea 
 							/ 	= lesson.simple_description

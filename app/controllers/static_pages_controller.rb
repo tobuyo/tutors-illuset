@@ -2,7 +2,7 @@ class StaticPagesController < ApplicationController
 
   def home
     @lessons = Lesson.includes(:user).all
-    @reports = Lesson.includes(:user).all.order(:title)
+    @reports = Report.includes(:user).all
     @tags = ActsAsTaggableOn::Tag.most_used
 
     @search = Lesson.ransack(params[:q]) # この行を追加

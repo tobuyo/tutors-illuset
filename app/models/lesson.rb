@@ -3,6 +3,7 @@ class Lesson < ApplicationRecord
   acts_as_taggable_on :tags
   belongs_to :user, optional: true 
   has_many :comments
+  has_many :reports
   validates :user_id, presence: true
   validates :title, presence: true
   validates :price, presence: false

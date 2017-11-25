@@ -3,9 +3,6 @@
 
     = image_tag @user.image.url, class: "mod-user-icon about-user-show"
 
-    
-
-
     = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
       = devise_error_messages!
       .header
@@ -49,7 +46,7 @@
           %br/
           = f.password_field :password_confirmation, autocomplete: "off"
         .field
-          = f.label :current_password, "現在のパスワード"
+          = f.label :current_password, "現在のパスワード", style: "color: red;"
           %i (必須)
           %br/
           = f.password_field :current_password, autocomplete: "off"

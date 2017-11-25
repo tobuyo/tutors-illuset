@@ -29,8 +29,10 @@ class LessonsController < ApplicationController
     @comment  = @lesson.comments.build(user_id: current_user.id) if current_user
     #binding.pry
     @replies = @comment.replies.includes(:user, :comment).all
-    
     @reply  = @comment.replies.build(user_id: current_user.id) if current_user
+
+    @reports = @lesson.reports.includes(:user, :lesson).all
+    @report  = @lesson.reports.build(user_id: current_user.id) if current_user
     @user = User.friendly.find_by(params[:id])
     impressionist(@user, nil, :unique => [:session_hash])
     @page_views = @user.impressionist_count
@@ -64,6 +66,10 @@ class LessonsController < ApplicationController
   
   def lesson_params
     params.require(:lesson).permit(:header, :user_id, :title, :price, :simple_description, :detail_description, :tag_list, :tags, :q, :tagsname, :format, :flag)
+  end
+
+  def report_params
+    params.require(:report).permit(:report, :reportimage, :title, :lesson_id)
   end
 
   def user_params

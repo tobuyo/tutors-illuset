@@ -12,6 +12,7 @@
 @import "login.scss";
 @import "footer.scss";
 @import "tagit.ui-zendesk.scss";
+@import "compass";
 
 li {
   list-style: none;
@@ -148,7 +149,7 @@ a{
 
 
 .mod-static-lessons-wrappers {
-  height: 180px;
+  @include clearfix;
   margin-bottom: 20px;
 }
 

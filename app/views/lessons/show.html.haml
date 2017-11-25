@@ -38,6 +38,31 @@
       %p.about-deatil
         = simple_format(@lesson.detail_description)
 
+      - @lesson.reports.each do |report|
+        = report.title
+        - unless report.reportimage.url.blank?
+          = image_tag report.reportimage.thumb.url
+
+    - if user_signed_in? && @lesson.user.id == current_user.id && @lesson.flag == 2
+      .report-field
+        = form_for @report do |f|
+          .field.is-hidden
+            = f.hidden_field :user_id
+          .field.is-hidden
+            = f.hidden_field :lesson_id, value: @lesson.id
+          .field
+            = f.label :title, "タイトル"
+            = f.text_area :title
+          .field
+            = f.label :body, "詳細"
+            = f.text_area :body
+          %p
+            = f.label :reportimage, "画像を選択します"
+            = f.file_field :reportimage
+          .actions
+            = f.submit 'レポートを投稿する', class: "mod-submit lesson-report"
+
+
     .lesson-comments
       %h2 ー回答ー
       - @comments.each do |comment|
@@ -81,12 +106,13 @@
         = render 'comments/form'
 
       - if user_signed_in? && @lesson.user.id == current_user.id
-        = form_for @lesson do |f|
-          %label
-            = f.radio_button :flag, 1
-            回答を受け付ける
-          %label
-            = f.radio_button :flag, 2
-            回答を締め切る
-          .actions
-            = f.submit '更新', class: "mod-submit about-lesson-show"
+        .flag-field
+          = form_for @lesson do |f|
+            %label
+              = f.radio_button :flag, 1
+              回答を受け付ける
+            %label
+              = f.radio_button :flag, 2
+              回答を締め切る
+            .actions
+              = f.submit '更新', class: "mod-submit lesson-flag"

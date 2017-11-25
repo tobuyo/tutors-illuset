@@ -14,7 +14,7 @@
     - @reports.each do |report|
       %tr
         %td= report.user_id
-        %td= report.comment_id
+        %td= report.commen_id
         %td= report.body
         %td= link_to 'Show', report
         %td= link_to 'Edit', edit_report_path(report)
@@ -28,7 +28,7 @@
     .field
       = f.hidden_field :user_id
     .field
-      = f.hidden_field :comment_id, value: comment_id
+      = f.hidden_field :leddon_id, value: lesson_id
     .field
       = f.label :reportimage, "画像を選択します"
       = f.file_field :reportimage
