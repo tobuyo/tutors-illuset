@@ -27,13 +27,13 @@ class LessonsController < ApplicationController
     @lesson = Lesson.includes(:user).find(params[:id])
     @comments = @lesson.comments.includes(:user).all
     @comment  = @lesson.comments.build(user_id: current_user.id) if current_user
-    #binding.pry
+
     @replies = @comment.replies.includes(:user, :comment).all
     @reply  = @comment.replies.build(user_id: current_user.id) if current_user
 
     @reports = @lesson.reports.includes(:user, :lesson).all
     @report  = @lesson.reports.build(user_id: current_user.id) if current_user
-    @user = User.friendly.find_by(params[:id])
+    @user = User.friendly.find(params[:id])
     impressionist(@user, nil, :unique => [:session_hash])
     @page_views = @user.impressionist_count
   end
