@@ -25,6 +25,7 @@ class LessonsController < ApplicationController
 
   def show
     @lesson = Lesson.includes(:user).find(params[:id])
+    @like = Like.where(params[:lesson_id])
     @comments = @lesson.comments.includes(:user).all
     @comment  = @lesson.comments.build(user_id: current_user.id) if current_user
 

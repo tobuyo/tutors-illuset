@@ -12,10 +12,13 @@
         = link_to @user.username, user_path
         さんによって作成されました
 
+
       %h1
         = @lesson.title
       %p
         タグ: #{raw(@lesson.tag_list.map { |t| link_to t, lessons_path(@tagsname = t) }.join(', '))}
+      #js-grid-juicy-projects
+        = render @lesson
 
     .lesson-sns{style: "text-align: right; font-size: 20px; padding: 10px;"}
       .view-count
@@ -24,6 +27,10 @@
       .view-count
         %i{class: "fa fa-comment"}
         = @comments.count
+      .view-count
+        %i{class: "fa fa-heart-o"}
+        = @like.count
+
       .view-count
         - if @lesson.flag == 1
           回答募集中

@@ -10,7 +10,9 @@ Rails.application.routes.draw do
   resources :users, :only => [:index, :show, :config]
   root 'static_pages#home'
   get 'tags/:tag', to: 'lessons#index', as: :tag
-	resources :lessons
+	resources :lessons do
+    resources :likes, only: [:create, :destroy]
+  end
   resources :tags
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

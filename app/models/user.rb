@@ -8,6 +8,7 @@ class User < ApplicationRecord
   has_many :lessons
   has_many :comments
   is_impressionable
+  has_many :likes, dependent: :destroy
   include FriendlyId
   friendly_id :username
 
