@@ -46,11 +46,11 @@
           %i (確認)
           %br/
           = f.password_field :password_confirmation, autocomplete: "off"
-        .field
-          = f.label :current_password, "現在のパスワード", style: "color: red;"
-          %i (必須)
-          %br/
-          = f.password_field :current_password, autocomplete: "off"
+        / .field
+        /   = f.label :current_password, "現在のパスワード", style: "color: red;"
+        /   %i (必須)
+        /   %br/
+        /   = f.password_field :current_password, autocomplete: "off"
           
         .actions
           = f.submit "更新", class: "submit"
