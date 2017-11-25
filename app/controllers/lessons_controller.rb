@@ -33,7 +33,7 @@ class LessonsController < ApplicationController
 
     @reports = @lesson.reports.includes(:user, :lesson).all
     @report  = @lesson.reports.build(user_id: current_user.id) if current_user
-    @user = User.friendly.find(params[:id])
+    @user = User.friendly.find_by(params[:user_id])
     impressionist(@user, nil, :unique => [:session_hash])
     @page_views = @user.impressionist_count
   end
