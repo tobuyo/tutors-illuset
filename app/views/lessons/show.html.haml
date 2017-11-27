@@ -9,7 +9,7 @@
     .lesson-header
       %p.lesson-date
         = @lesson.created_at
-        = link_to @user.username, user_path
+        = link_to @lesson.user.username, user_path
         さんによって作成されました
 
 

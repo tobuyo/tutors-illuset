@@ -24,11 +24,11 @@ class RepliesController < ApplicationController
   # POST /replies
   # POST /replies.json
   def create
-    @reply = Reply.new(reply_params)
+    @reply = Reply.includes(:comment).new(reply_params)
 
     respond_to do |format|
       if @reply.save
-        format.html { redirect_to @reply, notice: 'Reply was successfully created.' }
+        format.html {redirect_back fallback_location: root_path} 
         format.json { render :show, status: :created, location: @reply }
       else
         format.html { render :new }

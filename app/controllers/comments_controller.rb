@@ -29,7 +29,7 @@ class CommentsController < ApplicationController
 
     respond_to do |format|
       if @comment.save
-        redirect_to :back
+        format.html {redirect_back fallback_location: root_path} 
         format.json { render :show, status: :created, location: @comment }
       else
         format.html { render :new }
