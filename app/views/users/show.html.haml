@@ -42,9 +42,12 @@
       = simple_format(@user.introduction)
 
     %ul.choice-show
-      %li ​添削希望
-      %li 回答
-      %li レポート
+      / %li
+      /   = link_to "質問", user_path(params[:])
+      / %li
+      /   = link_to "回答", user_path
+      / %li
+      /   = link_to "レポート", user_path
 
     .list-wrapper
 
