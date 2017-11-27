@@ -3,7 +3,7 @@
   width: 80px;
   height: 80px;
   box-sizing: border-box;
-  border-radius: 40px;
+  border-radius: 50%;
   border: solid 3px #fff;
   position: absolute;
   left: 20px;
@@ -24,6 +24,7 @@
     top: 30px;
   }
 }
+
 
 .mod-submit {
   width: 445px;

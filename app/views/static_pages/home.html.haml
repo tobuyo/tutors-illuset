@@ -15,7 +15,8 @@
 	.ly-static-left
 		.left-header
 			- unless current_user.icon.url.blank?
-				= image_tag current_user.icon.thumb.url, class: "top-header"
+				.top-header{style: "background-image: url(#{current_user.icon.thumb.url})"}
+				/ = image_tag current_user.icon.thumb.url, class: "top-header"
 		= image_tag current_user.image.url, class: "icon"
 		.names-cell
 			.name 川地りん

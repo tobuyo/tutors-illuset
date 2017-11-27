@@ -96,3 +96,7 @@ $(function() {
     });
   });
 });
+
+$(function() {
+    $('#tag-input').tagit();
+});

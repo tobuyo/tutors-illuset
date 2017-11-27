@@ -6,7 +6,8 @@
       = devise_error_messages!
       .header
         - unless @user.icon.url.blank?
-          = image_tag @user.icon.url, class: "user-header"
+          .user-header{style: "background-image: url(#{@user.icon.url})"}
+          / = image_tag @user.icon.url, class: "user-header"
         .field.about-header
           = f.label :icon, "ヘッダー画像変更"
           %br/
