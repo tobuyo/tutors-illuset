@@ -17,7 +17,7 @@
       = f.label :body, "回答を書く"
       = f.text_area :body
     %p
-      = f.label :commentimage, "画像を選択します"
+      = f.label :commentimage, "回答に添付する参考画像を選択"
       = f.file_field :commentimage
     .actions
-      = f.submit 'これで回答する', class: "mod-submit about-lesson-show"
+      = f.submit '質問に回答する', class: "mod-submit about-lesson-show"

@@ -26,16 +26,16 @@ $(document).ready(function() {
   });
 });
 
-
-
 //画像を添付したときに表示させる機能
 $(function() {
-
-  var setFileInput = $('.about-picture'),
-    setFileImg = $('.new-picture');
-
-  // var setFileInput = $('.user-edit-main-content');
-  //   setFileImg = $('.mod-user-icon');
+  var path = location.pathname　 //パスの取得
+  if (path == "/lessons/new") {
+    var setFileInput = $('.about-picture'),
+      setFileImg = $('.new-picture');
+  } else if (path == "/users/edit") {
+    var setFileInput = $('.header'),
+      setFileImg = $('.user-header');
+  }
 
   setFileInput.each(function() {
     var selfFile = $(this),
@@ -65,6 +65,34 @@ $(function() {
   });
 });
 
-$(document).on('ready page:load', function() {
-  return $('#lesson-tags').tagit
+$(function() {
+  var setFileInput = $('.user-edit-main-content'),
+    setFileImg = $('.about-user-show');
+
+  setFileInput.each(function() {
+    var selfFile = $(this),
+      selfInput = $(this).find('input[name="image"]'),
+      prevElm = selfFile.find(setFileImg),
+      orgPass = prevElm.attr('src');
+
+    selfInput.change(function() {
+      var file = $(this).prop('files')[0],
+        fileRdr = new FileReader();
+
+      if (!this.files.length) {
+        prevElm.attr('src', orgPass);
+        return;
+      } else {
+        if (!file.type.match('image.*')) {
+          prevElm.attr('src', orgPass);
+          return;
+        } else {
+          fileRdr.onload = function() {
+            prevElm.attr('src', fileRdr.result);
+          }
+          fileRdr.readAsDataURL(file);
+        }
+      }
+    });
+  });
 });

@@ -1,12 +1,8 @@
-.ly-lessons_new
+.ly-lessons_new#lesson-new-display
   .ly-new-lesson-form
     %h1 投稿（全部必須）
     %ul.form-contents-warpper
-
       = form_for :lesson, url: lessons_path do |f|
-
-
-
         %li.form-contents.about-picture
           = image_tag "new-lesson-picture.png", class: "new-picture"
           %p
@@ -26,7 +22,6 @@
             = f.label :tag_list, 'タグを挿入'
           %br
             = f.text_field :tag_list
-
 
           %p
             = f.label :simple_description, "シンプル", class: "mod-form-label"
