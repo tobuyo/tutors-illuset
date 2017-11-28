@@ -94,7 +94,7 @@ a{
   box-sizing: border-box;
   padding-top: 0;
   &.is-circled {
-    border: 1px solid #000;
+    border: 1px solid #fff;
     font-size: 20px;
     padding: 5px;
   }
@@ -117,11 +117,13 @@ a{
 }
 
 .ly-header {
-  background-color: #fff;
-  border-bottom: solid 1px #000;
+  background-color: #07535e;
   height: 40px;
   width: 100%;
   position: relative;
+  i{
+    color: #fff;
+  }
   .inner {
     width: 910px;
     margin: auto;
