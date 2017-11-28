@@ -22,13 +22,24 @@
 			.name 川地りん
 			.name-id @gingatrain814
 		.manage-cell
-			.want 添削希望管理
-			.pen 赤ペン管理
-			.report レポート管理
-		.attention 新着赤ペンがありました！
+			.want マイ質問
+			.pen マイ回答
+			.report マイレポート
 
-		%a.twitter-timeline{"data-lang" => "ja", :href => "https://twitter.com/tutors_illust?ref_src=twsrc%5Etfw"} Tweets by tutors_illust
+		.left-new-posts
+			%ul.posts-list
+				%li
+					%a{href: "/lessons/new"}
+						%i.fa.fa-file{"aria-hidden" => "true", style: "font-size: 50px; color: #ED1566;"}
+						%p 質問する
+				%li
+					%a{href: "/lessons/new"}
+						%i.fa.fa-pencil{"aria-hidden" => "true", style: "font-size: 50px; color: #ED1566;"}
+						%p 回答する
+
+		%a.twitter-timeline{"data-height" => "400", "data-lang" => "ja", "data-theme" => "light", :href => "https://twitter.com/tutors_illust?ref_src=twsrc%5Etfw"} Tweets by tutors_illust
 		%script{:async => "", :charset => "utf-8", :src => "https://platform.twitter.com/widgets.js"}
+
 
 
 
