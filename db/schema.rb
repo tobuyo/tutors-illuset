@@ -16,9 +16,9 @@ ActiveRecord::Schema.define(version: 20171125135811) do
     t.integer "user_id"
     t.integer "lesson_id"
     t.text "body"
+    t.string "commentimage"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "commentimage"
   end
 
   create_table "friendly_id_slugs", force: :cascade do |t|
@@ -86,9 +86,9 @@ ActiveRecord::Schema.define(version: 20171125135811) do
     t.integer "user_id"
     t.integer "comment_id"
     t.text "body"
+    t.string "replyimage"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "replyimage"
   end
 
   create_table "reports", force: :cascade do |t|
@@ -144,6 +144,7 @@ ActiveRecord::Schema.define(version: 20171125135811) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "image"
+    t.string "userheader"
     t.string "icon"
     t.string "username"
     t.string "simpleintroduce"
