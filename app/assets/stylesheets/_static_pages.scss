@@ -20,14 +20,13 @@
         padding-top: 0;
         font-size: 70px;
         letter-spacing: 10px;
-        margin-top: 10px;
       }
     }
   }
   .characters {
     position: absolute;
     top: 20px;
-      width: 80px;
+    width: 80px;
     &.is-left {
       height: auto;
       left: 180px;
@@ -46,10 +45,16 @@
   background-color: #07535e;
 }
 
-.ly-static-left {
-
-  border: 1px solid #ccc;
-  box-sizing: border-box;
+.left-column {
+  float: left;
+  width: 300px;
+  margin: 10px 20px 0 0;
+  position: relative;
+  .left-profile {
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    background-color: #fff;
+  }
   .top-header {
     background-size: 100%;
     height: 100%;
@@ -59,12 +64,6 @@
     width: 100%;
     padding: 0;
   }
-  float: left;
-  width: 300px;
-  height: 400px;
-  background-color: #fff;
-  margin: 10px 20px 0 0;
-  position: relative;
   .left-header {
     height: 150px;
     background-color: #000;
@@ -78,23 +77,13 @@
     top: 75px;
     left: 10px;
   }
-  .names-cell {
-    display: table;
-    height: 20px;
-  }
   .name {
-    display: table-cell;
-    width: 150px;
-    text-align: right;
-    font-size: 16px;
-    padding: 10px;
-  }
-  .name-id {
-    display: table-cell;
-    width: 150px;
-    text-align: left;
-    font-size: 12px;
-    padding: 10px;
+    display: block;
+    height: 20px;
+    background-color: #f7f5f5;
+    text-align: center;
+    padding: 5px 20px;
+    margin: 0 auto 5px;
   }
   .manage-cell {
     display: table;
@@ -113,25 +102,31 @@
     display: table-cell;
     width: 100px;
   }
-  
-  .posts-list{
+
+  .posts-list {
     display: block;
     width: 90%;
     margin: 10px auto;
     border: 1px solid #ccc;
     background-color: #fff;
     padding: 0;
-    li{
+    p {
+      margin-top: 5px;
+    }
+    li {
       text-align: center;
       margin: 10px auto;
       width: 49%;
       display: inline-block;
     }
   }
+  .left-timeline {
+    margin-top: 20px;
+  }
 }
 
 .ly-static-right {
-  
+
   box-sizing: border-box;
   border: 1px solid #ccc;
   float: left;
@@ -149,18 +144,22 @@
     margin-bottom: 10px;
     margin-top: 10px;
   }
-  .mod-tag {
-    background-color: rgba(189, 191, 55, 1);
-    width: auto;
-    height: 15px;
-    font-size: 12px;
-    border-radius: 5px;
-    text-align: center;
-    color: #fff;
-    float: left;
-    margin: 2px;
-    padding: 2px 5px;
+
+  .tags {
+    a:link {
+      color: #fff
+    } //訪問済みリンク　の　色を　green　にする。
+    a:visited {
+      color: #fff
+    } //マウスカーソルを乗せたリンク　の　色を　blue　にする。
+    a:hover {
+      color: #fff
+    } //選択したリンク　の　色を　gray　にする。
+    a:active {
+      color: #fff
+    }
   }
+
   .left-header {
     height: 150px;
     background-color: #000;
@@ -208,9 +207,7 @@
     display: table-cell;
     width: 100px;
   }
-  .left-new-posts{
-    
-  }
+  .left-new-posts {}
 }
 
 .ly-home-wrap {
@@ -235,22 +232,20 @@
 
 .mod-lessons-picture {
   position: relative;
-  
+
   &.is-search {
     float: left;
     height: 200px;
     margin: 5px;
     background-color: #fff;
-
-  }
-  img {
-    width: 128px;
-    max-height: 130px;
-    margin: 1px;
-    background-repeat: no-repeat;
-    background-size: cover;
-    text-align: center;
-  }
+  } // img {
+  //   width: 128px;
+  //   max-height: 130px;
+  //   margin: 1px;
+  //   background-repeat: no-repeat;
+  //   background-size: cover;
+  //   text-align: center;
+  // }
   .mod-lessons-icon {
     width: 30px;
     height: 30px;
@@ -260,36 +255,41 @@
   }
 }
 
-.mod-lessons-name {
-  font-size: 12px;
-  text-align: left;
-  position: absolute;
-  margin: 0;
-  left: 45px;
-  right: 0;
-  top: 140px;
-  overflow: hidden;
-}
-
 .ly-static-contents-wrapper {
   width: 1200px;
   height: 900px;
   margin: auto;
 }
 
-.lessons {
-  width: 136px;
-  height: 180px; // background-color: rgba(204, 204, 204, 0.3);
-  background-color: #FFF;
-  border: 1px solid #ccc;
-  float: left;
-  margin-right: 4px;
-  box-sizing: border-box;
-}
-
-
-
-
+// .lessons {
+//   width: 178px;
+//   height: 180px; // background-color: rgba(204, 204, 204, 0.3);
+//   background-color: #FFF;
+//   border: 1px solid #ccc;
+//   float: left;
+//   margin: 5px 4px;
+//   box-sizing: border-box;
+// }
+// .lesson-card-icon{
+//   position: absolute;
+//   bottom: 20px;
+//   left: 20px;
+//   width: 50px;
+//   height: 50px;
+//   border-radius: 50%;
+//   border: 2px solid #fff;
+// }
+// .mod-lessons-name {
+//   font-size: 12px;
+//   text-align: left;
+//   font-weight: normal;
+//   position: absolute;
+//   margin: 0;
+//   left: 45px;
+//   right: 0;
+//   top: 140px;
+//   overflow: hidden;
+// }
 @media screen and (min-width:768px) and ( max-width:1200px) {
   .ly-static-contents-wrapper {
     width: 880px;

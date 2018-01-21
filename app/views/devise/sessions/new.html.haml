@@ -3,9 +3,11 @@
   .login-contents.is-left
     = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
       .field
+        = f.label :email, "メールアドレス"
         %br/
         = f.email_field :email, autofocus: true, placeholder: "メールアドレスを入力", class: "mod-inputs login-characters"
       .field
+        = f.label :password, "パスワード"
         %br/
         = f.password_field :password, autocomplete: "off", placeholder: "パスワードを入力", class: "mod-inputs login-characters"
       - if devise_mapping.rememberable?

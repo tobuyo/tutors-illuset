@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
   def index
     @search = Lesson.ransack(params[:q]) # この行を追加
     @searched = @search.result #この行を修正
-
+    
   end
 
   def user_image

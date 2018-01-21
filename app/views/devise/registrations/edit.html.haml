@@ -1,6 +1,7 @@
 .ly-users-edit#user-edit-display
   .user-edit-main-content
-    = image_tag @user.image.url, class: "mod-user-icon about-user-show"
+    - unless @user.image.url.blank?
+      = image_tag @user.image.url, class: "mod-user-icon about-user-show"
 
     = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
       = devise_error_messages!

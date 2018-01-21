@@ -16,7 +16,7 @@
       %h1
         = @lesson.title
       %p
-        タグ: #{raw(@lesson.tag_list.map { |t| link_to t, lessons_path(@tagsname = t) }.join(', '))}
+        #{raw(@lesson.tag_list.map { |t| link_to t, lessons_path(@tagsname = t),class: "mod-tag" }.join(', '))}
       #js-grid-juicy-projects
         = render @lesson
 

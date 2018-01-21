@@ -11,13 +11,14 @@
   background-color: #fff;
 
   &.about-user-show {
-    width: 160px;
-    height: 160px;
-    border-radius: 80px;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
     left: 10px;
     z-index: 100;
+    top: 100px;
   }
-  &.about-lesson-show{
+  &.about-lesson-show {
     width: 110px;
     height: 110px;
     border-radius: 55px;
@@ -39,17 +40,76 @@
   box-shadow: inset 0 2px 0 rgba(255, 255, 255, 0.2), inset 0 -2px 0 rgba(0, 0, 0, 0.05);
   font-weight: bold;
   border: solid 2px rgba(0, 0, 0, 1);
-  &.about-lesson-show{
+  &.about-lesson-show {
     width: 600px;
   }
-  &.lesson-flag{
+  &.lesson-flag {
     width: 100px;
   }
-  &.lesson-report{
+  &.lesson-report {
     width: 200px;
+  }
+}
+
+.mod-tag {
+  background-color: rgba(189, 191, 55, 1);
+  width: auto;
+  height: 15px;
+  font-size: 12px;
+  border-radius: 5px;
+  text-align: center;
+  color: #fff;
+  float: left;
+  margin: 2px;
+  padding: 2px 5px;
+  
+  &.is-inner-lesson-card {
+    height: 10px;
+    font-size: 10px;
+    padding-top: 0;
   }
 }
 
 .mod-submit:active {
   box-shadow: 0 0 2px rgba(0, 0, 0, 0.30);
+}
+
+
+.mod-lesson-card {
+
+  width: 178px;
+  height: 140px;
+  background-color: #FFF;
+  border: 1px solid #ccc;
+  float: left;
+  margin: 5px 4px;
+  box-sizing: border-box;
+  .lesson-tags {
+    height: 12px;
+    margin-left: 35px;
+  }
+  .lesson-header {
+    height: 80px;
+    background-repeat: no-repeat;
+    background-position: 0 50%;
+    background-size: 100%;
+  }
+  .lesson-footer {
+    height: 50px;
+    position: relative;
+  }
+  .lesson-card-icon {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    position: absolute;
+    left: 5px;
+    top: -35px;
+  }
+  .lesson-description {
+    font-size: 12px;
+    font-weight: normal;
+    padding: 5px;
+    margin: 0;
+  }
 }

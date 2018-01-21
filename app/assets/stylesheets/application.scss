@@ -1,4 +1,5 @@
 @import "normalize.scss";
+@import "compass";
 @import "users.scss";
 @import "users_show.scss";
 @import "users_edit.scss";
@@ -10,9 +11,47 @@
 @import "lessons_new.scss";
 @import "lessons_show.scss";
 @import "login.scss";
+@import "login-links.scss";
+@import "registration.scss";
 @import "footer.scss";
 @import "jquery.tagit.scss";
-@import "compass";
+
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://example.com/MaterialIcons-Regular.eot); /* For IE6-8 */
+  src: local('Material Icons'),
+    local('MaterialIcons-Regular'),
+    url(https://example.com/MaterialIcons-Regular.woff2) format('woff2'),
+    url(https://example.com/MaterialIcons-Regular.woff) format('woff'),
+    url(https://example.com/MaterialIcons-Regular.ttf) format('truetype');
+}
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;  /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: 'liga';
+}
 
 li {
   list-style: none;
@@ -45,29 +84,32 @@ a{
 
 
 .search-form {
-    width: 156px;
+    max-width: 720px;
     position: absolute;
-    top: 10px;
-    border-radius: 10px;
+    top: 5px;
     left: 150px;
+    color: #fff;
 }  
 .search-text  {      
-    width: 156px;
-    border-radius: 10px;
-    border: 1px solid #ccc;
+    border: none;
+    color: #fff;
+    max-width: 720px;
+    height: 35px;
+    padding-left: 40px;
+    background-color: #05444d;
 }
 
 .search-submit {
     position: absolute;
+    background-color: #05444d;
     top: 0px;
-    left: 110px;
+    left: 0px;
     margin-top: 5px;
-    height: 15px;
-    line-height: 2px;
+    font-size: 24px;
     border-radius: 5px;
-    background-color: #fff;
     border: none;
-    color: #ccc;
+    color: #fff;
+    font-family: 'Material Icons';
 }  
 
 
@@ -88,6 +130,7 @@ a{
   height: 30px;
   border-radius: 18px;
   margin: 5px;
+  margin-top: 10px;
   font-size: 30px;
   color: #000;
   float: right;
@@ -118,8 +161,9 @@ a{
 
 .ly-header {
   background-color: #07535e;
-  height: 40px;
+  height: 48px;
   width: 100%;
+  border-bottom: 1px solid #000;
   position: relative;
   i{
     color: #fff;
@@ -162,6 +206,12 @@ a{
   margin: 5px;
 }
 
+.logo{
+  font-size: 32px;
+  color: #fff;
+  margin-top: 4px;
+  display: inline-block;
+}
 
 
 .mod-lessons-textarea {

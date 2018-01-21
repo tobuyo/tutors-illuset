@@ -1,6 +1,7 @@
-- if lesson.like_user(current_user.id)
-  = link_to lesson_like_path(lesson, lesson.like_user(current_user)), method: :delete, class: 'heart-icon', remote: true do
-    .fa.fa-heart.fa-2x.heart-red
-- else
-  = link_to lesson_likes_path(lesson), method: :post, class: 'empty-heart', remote: true do
-    .fa.fa-heart-o.fa-2x.heart-color
+.heart
+  - if lesson.like_user(current_user.id)
+    = link_to lesson_like_path(lesson, lesson.like_user(current_user)), method: :delete, class: 'heart-icon', remote: true do
+      .fa.fa-heart.fa-2x.heart-red
+  - else
+    = link_to lesson_likes_path(lesson), method: :post, class: 'empty-heart', remote: true do
+      .fa.fa-heart-o.fa-2x.heart-color

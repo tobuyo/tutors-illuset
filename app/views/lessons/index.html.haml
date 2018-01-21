@@ -9,8 +9,20 @@
       = @tag
       でのタグ検索
   - @show.each do |lesson| 
-    = link_to lesson do
-      %li.mod-lessons-picture.is-search
-        = link_to image_tag(lesson.header.thumb,{class: " "}), lesson_path(lesson.id)
-        = image_tag lesson.user.image.thumb.url, class: "mod-lessons-icon"
-        = link_to lesson.title, lesson, class: "mod-lessons-name"
+    %article.mod-lesson-card
+      = link_to lesson do
+        .lesson-header{style: "background-image: url(#{lesson.header.thumb.url})"}
+        .lesson-tags
+          - lesson.tag_list.each do |tag|
+            %p.mod-tag.is-inner-lesson-card
+              = tag
+        .lesson-footer
+          = image_tag lesson.user.image.url, class: "lesson-card-icon"
+          %h3.lesson-description
+            = link_to lesson.title, lesson
+
+    / = link_to lesson do
+    /   %li.mod-lessons-picture.is-search
+    /     = link_to image_tag(lesson.header.thumb,{class: " "}), lesson_path(lesson.id)
+    /     = image_tag lesson.user.image.thumb.url, class: "mod-lessons-icon"
+    /     = link_to lesson.title, lesson, class: "mod-lessons-name"

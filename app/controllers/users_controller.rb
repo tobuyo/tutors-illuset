@@ -7,7 +7,7 @@ class UsersController < ApplicationController
   def show
     @user = User.friendly.find(params[:id])
     if Lesson.find_by(params[:user_id])
-      @lessons = Lesson.where(user_id: :id)
+      @lessons = Lesson.where(user_id: user_id)
     else
       @message = "レッスンを持っていません"
     end

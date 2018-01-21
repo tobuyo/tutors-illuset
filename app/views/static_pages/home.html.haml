@@ -1,8 +1,9 @@
 
 .ly-static-bigbanner-wrapper
 	.inner
-		%h1 画力向上の為の絵描き応援SNS
-		%h1.is-bottom TUTORS
+		%h1 画力向上のための質問SNS
+		%h1.is-bottom 
+			%img{src: "https://s3-ap-northeast-1.amazonaws.com/tutors-upload-test/assets-images/tutors-logo-top.png", width: "250px;"}
 		%img.characters.is-left{src: "https://s3-ap-northeast-1.amazonaws.com/tutors-upload-test/assets-images/chara1.png"}
 		%img.characters.is-right{src: "https://s3-ap-northeast-1.amazonaws.com/tutors-upload-test/assets-images/chara2.png"}
 
@@ -10,75 +11,69 @@
 
 
 .ly-static-contents-wrapper
-	.ly-static-left
-		.left-header
-			- unless current_user.icon.url.blank?
-				.top-header{style: "background-image: url(#{current_user.icon.thumb.url})"}
-				/ = image_tag current_user.icon.thumb.url, class: "top-header"
-		= image_tag current_user.image.url, class: "icon"
-		.names-cell
-			.name 川地りん
-			.name-id @gingatrain814
-		.manage-cell
-			.want マイ質問
-			.pen マイ回答
-			.report マイレポート
+	.left-column
+		.left-profile
+			.left-header
+				- unless current_user.icon.url.blank?
+					.top-header{style: "background-image: url(#{current_user.icon.thumb.url})"}
+					/ = image_tag current_user.icon.thumb.url, class: "top-header"
+			- unless current_user.image.url.blank?
+				= image_tag current_user.image.url, class: "icon"
+			.name
+				= current_user.username
+			.manage-cell
+				.want マイ質問
+				.pen マイ回答
+				.report マイレポート	
 
-		.left-new-posts
-			%ul.posts-list
-				%li
-					%a{href: "/lessons/new"}
-						%i.fa.fa-file{"aria-hidden" => "true", style: "font-size: 50px; color: #ED1566;"}
-						%p 質問する
-				%li
-					%a{href: "/lessons/new"}
-						%i.fa.fa-pencil{"aria-hidden" => "true", style: "font-size: 50px; color: #ED1566;"}
-						%p 回答する
+			.left-new-posts
+				%ul.posts-list
+					%li
+						%a{href: "/lessons/new"}
+							%i.fa.fa-file{"aria-hidden" => "true", style: "font-size: 50px; color: #ED1566;"}
+							%p 質問する
+					%li
+						%a{href: "/lessons/new"}
+							%i.fa.fa-pencil{"aria-hidden" => "true", style: "font-size: 50px; color: #ED1566;"}
+							%p 回答する
 
-		%a.twitter-timeline{"data-height" => "400", "data-lang" => "ja", "data-theme" => "light", :href => "https://twitter.com/tutors_illust?ref_src=twsrc%5Etfw"} Tweets by tutors_illust
-		%script{:async => "", :charset => "utf-8", :src => "https://platform.twitter.com/widgets.js"}
-
-
-
+		.left-timeline
+			%a.twitter-timeline{"data-height" => "400", "data-lang" => "ja", "data-theme" => "light", :href => "https://twitter.com/tutors_illust?ref_src=twsrc%5Etfw"} Tweets by tutors_illust
+			%script{:async => "", :charset => "utf-8", :src => "https://platform.twitter.com/widgets.js"}
 
 	.ly-home-wrap
 		.new-want.mod-news 最新の質問
 		.mod-static-lessons-wrappers
-			- @lessons.last(8).each do |lesson|
-				= link_to lesson do
-					%article.lessons
-
-						.mod-lessons-picture
-								
-
-							- unless lesson.header.thumb.url.blank?
-								= image_tag lesson.header.thumb.url
-
-							= image_tag lesson.user.image.url, class: "mod-lessons-icon"
-
-							%h2.mod-lessons-name 
+			- @lessons.last(6).each do |lesson|
+				%article.mod-lesson-card
+					= link_to lesson do
+						.lesson-header{style: "background-image: url(#{lesson.header.thumb.url})"}
+						.lesson-tags
+							- lesson.tag_list.each do |tag|
+								%p.mod-tag.is-inner-lesson-card
+									= tag
+						.lesson-footer
+							= image_tag lesson.user.image.url, class: "lesson-card-icon"
+							%h3.lesson-description
 								= link_to lesson.title, lesson
 
-							%h3.mod-lessons-tags
-							/ %p.mod-lessons-textarea 
-							/ 	= lesson.simple_description
+
 
 
 		.new-report.mod-news 最新のレポート
 		.mod-static-lessons-wrappers
-			- @reports.last(8).each do |report|
-				= link_to report do
-					%article.lessons
-						.mod-lessons-picture
-							- unless report.reportimage.thumb.url.blank?
-								= image_tag report.reportimage.thumb.url
-							= image_tag report.user.image.thumb.url, class: "mod-lessons-icon"
-
-							%h2.mod-lessons-name 
-								= report.title
-							%h3.mod-lessons-tags
-							/ %p.mod-lessons-textarea 
-							/ 	= lesson.simple_description
+			- @lessons.last(6).each do |lesson|
+				%article.mod-lesson-card
+					= link_to lesson do
+						.lesson-header{style: "background-image: url(#{lesson.header.thumb.url})"}
+						.lesson-tags
+							- lesson.tag_list.each do |tag|
+								%p.mod-tag.is-inner-lesson-card
+									= tag
+						.lesson-footer
+							= image_tag lesson.user.image.url, class: "lesson-card-icon"
+							%h3.lesson-description
+								= link_to lesson.title, lesson
 
 	.ly-static-right
 		.right-tag-title 人気のタグ

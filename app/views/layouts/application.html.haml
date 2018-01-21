@@ -25,15 +25,19 @@
     %script{:charset => "utf-8", :src => "js/tag-it.min.js", :type => "text/javascript"}
     %link{rel: "stylesheet", type: "text/css", href: "http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/flick/jquery-ui.css"}
     %link{href: "css/jquery.tagit.css", rel: "stylesheet", type: "text/css"}
+    %link{href: "https://fonts.googleapis.com/icon?family=Material+Icons", rel: "stylesheet"}
 
   %body
     %header.ly-header
       .inner
         = link_to root_path do
-          %img.tutors-logo{:src => "https://s3-ap-northeast-1.amazonaws.com/tutors-upload-test/assets-images/tutors_logo.png"}/
+          /%img.tutors-logo{:src => "https://s3-ap-northeast-1.amazonaws.com/tutors-upload-test/assets-images/tutors_logo.png"}/
+          .logo TUTORS
         = search_form_for @search, html: { class: 'search-form' }, url: lessons_path do |f|
-          = f.text_field :detail_description_or_title_cont, class: "search-text"
-          = f.submit "検索", class: "search-submit"
+          = f.text_field :detail_description_or_title_cont, class: "search-text", placeholder: "検索"
+          = f.submit "search", class: "search-submit"
+          
+        
 
         = link_to edit_user_registration_path do
           %i.fa.fa-cog.mod-header-buttons.is-circled

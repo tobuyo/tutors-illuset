@@ -4,63 +4,49 @@
   .user-show-left-content
     .ul
       = link_to new_lesson_path do
-        .li.mod-left-content 添削希望
+        .li.mod-left-content 新しく質問する
       = link_to new_lesson_path do
-        .li.mod-left-content 添削したもの
+        .li.mod-left-content 新しく回答する
       = link_to new_lesson_path do
-        .li.mod-left-content レポート
+        .li.mod-left-content 全ての質問を見る
       = link_to users_path do
-        .li.mod-left-content ユーザーを全員見る
-      = link_to new_lesson_path do
         .li.mod-left-content プロフィールを編集する
       = link_to root_path do
         .li.mod-left-content 講座を全部見る
       = link_to destroy_user_session_path, method: :delete do
         .li.mod-left-content ログアウトする
-      = link_to root_path do
-        .li.mod-left-content 講座を全部見る
 
   .user-show-main-content
     = image_tag @user.image.thumb.url, class: "mod-user-icon about-user-show"
-    .header
-      - unless @user.icon.thumb.url.blank?
-        = image_tag @user.icon.thumb.url, class: "user-header"
-    .names
-      .name
-        = @user.username
-      .name-id
-        @tobuyotobuto
-    .information-numbers
-      .mod-numbers.favorite 250
-      .mod-numbers.tensaku 250
-      .mod-numbers.nanka 250
+    .user-header{style: "background-image: url(#{current_user.icon.url})"}
+      / - unless @user.icon.thumb.url.blank?
+      /   = image_tag @user.icon.thumb.url, class: "user-header"
+
+    .name
+      = @user.username
 
     .profiles
-      
-
-    
       = simple_format(@user.introduction)
 
-    %ul.choice-show
-      / %li
-      /   = link_to "質問", user_path(params[:])
-      / %li
-      /   = link_to "回答", user_path
-      / %li
-      /   = link_to "レポート", user_path
+    
 
-    .list-wrapper
-
+    .user-holds
+      %ul.choice-show
+        %li
+          質問
+        %li
+          回答
+        %li
+          レポート(準備中)
       - @lessons.each do |lesson|
-        = link_to lesson do
-          %article.lessons
-            .mod-lessons-picture
-              .mod-lessons-title 
-                %h2.mod-lessons-name 
-                  = link_to lesson.title, lesson
-
-              = image_tag lesson.header.url
-
-              %h3.mod-lessons-tags
-              %p.mod-lessons-textarea 
-                = lesson.simple_description
+        %article.mod-lesson-card
+          = link_to lesson do
+            .lesson-header{style: "background-image: url(#{lesson.header.thumb.url})"}
+            .lesson-tags
+              - lesson.tag_list.each do |tag|
+                %p.mod-tag.is-inner-lesson-card
+                  = tag
+            .lesson-footer
+              = image_tag lesson.user.image.url, class: "lesson-card-icon"
+              %h3.lesson-description
+                = link_to lesson.title, lesson

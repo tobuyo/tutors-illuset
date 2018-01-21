@@ -1,8 +1,8 @@
 .ly-users-edit {
   width: 700px;
   margin: auto;
-  height: 1000px;
   background-color: #fff;
+  margin: 40px auto;
   .user-header {
     background-size: 100%;
     height: 100%;
@@ -14,7 +14,6 @@
     margin-top: -1px;
   }
   .user-edit-main-content {
-    float: left;
     background-color: #fff;
     width: 700px;
     margin: auto;
