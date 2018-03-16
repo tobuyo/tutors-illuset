@@ -38,15 +38,16 @@
           回答
         %li
           レポート(準備中)
-      - @lessons.each do |lesson|
-        %article.mod-lesson-card
-          = link_to lesson do
-            .lesson-header{style: "background-image: url(#{lesson.header.thumb.url})"}
-            .lesson-tags
-              - lesson.tag_list.each do |tag|
-                %p.mod-tag.is-inner-lesson-card
-                  = tag
-            .lesson-footer
-              = image_tag lesson.user.image.url, class: "lesson-card-icon"
-              %h3.lesson-description
-                = link_to lesson.title, lesson
+      - unless @lessons.blank?      
+        - @lessons.each do |lesson|
+          %article.mod-lesson-card
+            = link_to lesson do
+              .lesson-header{style: "background-image: url(#{lesson.header.thumb.url})"}
+              .lesson-tags
+                - lesson.tag_list.each do |tag|
+                  %p.mod-tag.is-inner-lesson-card
+                    = tag
+              .lesson-footer
+                = image_tag lesson.user.image.url, class: "lesson-card-icon"
+                %h3.lesson-description
+                  = link_to lesson.title, lesson

@@ -31,7 +31,8 @@
       %header.ly-header
         .inner
           = link_to root_path do
-            %img.tutors-logo{:src => "https://s3-ap-northeast-1.amazonaws.com/tutors-upload-test/assets-images/tutors_logo.png"}/
+            /%img.tutors-logo{:src => "https://s3-ap-northeast-1.amazonaws.com/tutors-upload-test/assets-images/tutors_logo.png"}/
+            .logo TUTORS
           - if user_signed_in?
             = form_tag user_path(current_user), :method => 'get' ,class: "header-form" do
               %p
