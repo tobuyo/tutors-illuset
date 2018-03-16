@@ -12,15 +12,15 @@ CarrierWave.configure do |config|
 
   case Rails.env
     when 'production'
-      config.fog_directory = 'tutors-upload-test'
-      config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/tutors-upload-test'
+      config.fog_directory = 'tutors-production'
+      config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/tutors-production'
 
     when 'development'
-      config.fog_directory = 'tutors-upload-test'
-      config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/tutors-upload-test'
+      config.fog_directory = 'tutors-test'
+      config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/tutors-test'
 
     when 'test'
-      config.fog_directory = 'tutors-upload-test'
-      config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/tutors-upload-test'
+      config.fog_directory = 'tutors-test'
+      config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/tutors-test'
   end
 end
