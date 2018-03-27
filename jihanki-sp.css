@@ -1,0 +1,407 @@
+.clearfix:after {
+	content: "";
+	clear: both;
+	display: block;
+}
+.yell .wrap-contents {
+	box-shadow: 0 0 0 0 rgba(0, 0, 0, 0)!important;
+}
+.yell #jihanki {
+	width: 100%;
+	text-align: left;
+	min-width: 320px;
+	background: #fce5df;
+	padding-top: 8px;
+	margin: 0 auto;
+	font-size: 13px;
+	box-sizing: border-box;
+}
+.yell #jihanki .area-main a {
+	text-decoration: underline;
+	color: #7175df;
+}
+.yell #jihanki .area-main {
+	padding: 20px 15px 30px;
+	box-sizing: border-box;
+	width: 100%;
+	margin: 0 auto;
+	background-color: #fff;
+	-webkit-box-shadow: rgba(39, 50, 58, .2) 0 0 2px 0;
+	-moz-box-shadow: rgba(39, 50, 58, .2) 0 0 2px 0;
+	box-shadow: rgba(39, 50, 58, .2) 0 0 2px 0;
+}
+.yell #jihanki .area-main ul.box-sns {
+	font-size: 0;
+	text-align: center;
+	margin: 10px 0;
+	width: auto;
+}
+.yell #jihanki .area-main ul.box-sns li {
+	font-size: 12px;
+	display: inline-block;
+}
+.yell #jihanki .area-main ul.box-sns .li-tw {
+	margin-left: 10px;
+	vertical-align: top;
+}
+.yell #jihanki .area-main h1 {
+	font-size: 15px;
+	font-weight: bold;
+	margin-bottom: 10px;
+	box-sizing: border-box;
+	line-height: 1.4;
+	text-align: left;
+	color: #F4A433;
+	word-break: break-all;
+	text-align: left;
+}
+.yell #jihanki .area-main h2 {
+	font-size: 15px;
+	margin: 16px 0 5px;
+}
+.yell #jihanki .area-main h3 {
+	font-size: 14px;
+	margin: 13px 0 4px;
+}
+.yell #jihanki .area-main h4 {
+	font-size: 13px;
+	margin: 10px 0 4px;
+}
+.yell #jihanki .area-main img.image {
+	max-width: 100%;
+	height: auto;
+	margin: auto;
+	display: block;
+}
+.yell #jihanki .area-main a.arrow {
+	padding-left: 10px;
+	background: url(https://p.dmm.com/p/common/arrow_common.gif) no-repeat left center;
+	cursor: pointer;
+	color: #fe6786;
+}
+/*head breadCrumb*/
+.yell .area-breadCrumbLP {
+	font-size: 12px;
+	line-height: 1.2;
+	padding: 15px 0 15px 15px;
+}
+.yell .area-breadCrumbLP li {
+	display: inline-block;
+	overflow: hidden;
+	max-width: 50%;
+	margin-right: 5px;
+	padding-right: 20px;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	background-image: url('https://yell.dmm.com/lp/img/sp/common/ico_arrow.png');
+	background-repeat: no-repeat;
+	background-position: right center;
+	background-size: 15px auto;
+}
+.yell .area-breadCrumbLP li:first-child a {
+	padding-left: 25px;
+	background-image: url('https://yell.dmm.com/lp/img/sp/common/ico_yell.png');
+	background-repeat: no-repeat;
+	background-position: left center;
+	background-size: 22px auto;
+}
+.yell .area-breadCrumbLP li:last-child {
+	background: none;
+}
+.yell .area-breadCrumbLP li a {
+	color: #3d505f;
+}
+.yell .area-breadCrumbLP li a:hover {
+	opacity: 1;
+	color: #7175df;
+}
+/*footer area-download*/
+
+.yell #jihanki .area-bnrWebApp {
+	padding: 20px 0 0;
+	text-align: center
+}
+.yell #jihanki .area-download {
+	width: 280px;
+	margin: 20px auto 0;
+	padding: 20px 0;
+	text-align: center;
+	background: #f0f3f5;
+}
+.yell #jihanki .area-download .area-download-btn {
+	float: right;
+	margin: 5% 0 0 0;
+}
+.yell #jihanki .area-download .area-download-btn .app-btn {
+	margin-bottom: 8px;
+}
+.yell #jihanki .area-corp {
+	margin: 0 0 40px;
+	padding: 20px 15px 0;
+	text-align: center;
+	background: #f0f3f5
+}
+.yell #jihanki .area-corp h1 {
+	font-size: 12px;
+	font-weight: 700;
+	margin: 0 auto 20px;
+	text-align: center
+}
+.yell #jihanki .area-corp .box-corp {
+	text-align: left
+}
+.yell #jihanki .area-corp .box-corp>p, .yell #jihanki .area-corp .box-corp-list {
+	margin-bottom: 24px
+}
+.yell #jihanki .area-corp .box-corp-list li {
+	display: table;
+	margin-bottom: 16px;
+	table-layout: fixed;
+	direction: rtl
+}
+.yell #jihanki .area-corp .box-corp-list li:last-child {
+	margin-bottom: 0
+}
+.yell #jihanki .area-corp .box-corp-list img {
+	display: table-cell;
+	width: 128px;
+	vertical-align: middle
+}
+.yell #jihanki .area-corp .box-corp-listText {
+	display: table-cell;
+	padding-left: 16px;
+	vertical-align: middle;
+	direction: ltr
+}
+.yell #jihanki .area-corp .box-corp-listText b {
+	font-size: 13px;
+	line-height: 1;
+	display: block;
+	margin-bottom: 4px
+}
+.yell #jihanki .area-corp .box-corp-listText p {
+	font-size: 11px;
+	line-height: 1.5
+}
+.yell #jihanki .area-corp .box-corp-btn {
+	font-size: 13px;
+	line-height: 44px;
+	display: block;
+	height: 44px;
+	margin: 0;
+	text-align: center;
+	color: #fff;
+	border: none;
+	border-radius: 5px;
+	background-color: #3d505f
+}
+.yell #jihanki .area-corp .box-corp-btn span {
+	display: inline-block;
+	text-indent: 2em;
+	background-image: url('/lp/img/pc/common/ico_form01.png');
+	background-repeat: no-repeat;
+	background-position: left center
+}
+.yell #jihanki .area-download .area-download-box {
+	overflow: hidden;
+	width: 280px;
+	margin: 20px auto 0;
+}
+.yell #jihanki .area-download .area-download-box .area-download-text {
+	font-size: 14px;
+	float: left;
+	padding: 33px 18px 33px 4%;
+	text-align: left;
+	background: url(https://yell.dmm.com/lp/img/sp/common/circle_fukidasi.png) left center no-repeat;
+	background-size: 128px auto;
+}
+.yell #jihanki .area-download .area-download-box .area-download-btn {
+	float: right;
+	margin: 5% 0 0 0;
+}
+.yell #jihanki .area-download .area-download-box .area-download-btn .app-btn {
+	margin-bottom: 8px;
+}
+/* ===== common end ===== */
+/* ===== contents ===== */
+.yell #jihanki .area-main .pic-head {
+	width: 100%;
+	display: block;
+}
+
+.yell #jihanki .area-main .pic-head img {
+	max-width: 100%;
+	margin: 0 auto;
+	display: block;
+}
+.yell #jihanki .area-main p {
+	line-height: 1.7em;
+}
+.yell #jihanki .area-main li {
+	line-height: 1.8em;
+}
+.yell #jihanki .area-main ul.attention-sm {
+	font-size: 12px;
+}
+.yell #jihanki .area-main .attention li {
+	padding-left: 1em;
+	text-indent: -1em;
+}
+.yell #jihanki .area-main p + .attention {
+	margin-top: 10px;
+}
+.yell #jihanki .area-main [class*="tx-point"] {
+	font-weight: bold;
+	color: #7175df;
+}
+.yell #jihanki .area-main span.tx-point-sm {
+	font-size: 10px;
+}
+.yell #jihanki .area-main span.tx-point-la {
+	font-size: 16px;
+}
+.yell #jihanki .area-main .boxListParticipant span:after {
+	content: " / ";
+}
+.yell #jihanki .area-main .boxListParticipant span:last-child:after {
+	content: " ";
+}
+/*announcement of results*/
+.yell #jihanki .area-main h2.ttl-result {
+	text-align: center;
+	font-size: 26px;
+}
+.yell #jihanki .area-main table {
+	text-align: center;
+	border-collapse: collapse;
+	font-size: 12px;
+	margin: auto;
+}
+.yell #jihanki .area-main table th {
+	background-color: #7175df;
+	color: #fff;
+	border-color: #000000;
+	vertical-align: middle;
+	line-height: 1.2;
+	padding: 2px 8px;
+	text-align: left;
+}
+.yell #jihanki .area-main table td {
+	border-color: #000000;
+	padding: 4px 8px;
+	line-height: 1.4;
+	vertical-align: middle;
+	text-align: left;
+}
+.yell #jihanki .area-main table td:first-child {
+	text-align: center;
+}
+.yell #jihanki .area-main table .th-ranking {
+	width: 16%;
+}
+.yell #jihanki .area-main table .th-group {
+	width: 25%;
+}
+.yell #jihanki .area-main table .th-idol {
+	width: 25%;
+}
+.yell #jihanki p.mg-t20 {
+	margin-top: 20px;
+}
+/* ===== contents end ===== */
+.yell #jihanki .txtStrike {
+	text-decoration: line-through;
+}
+/*origin*/
+.yell #jihanki .applicationFlow li {
+	list-style-type: decimal;
+	margin-left: 1em;
+}
+.yell #jihanki .btn-block {
+	display: block;
+	padding: 5px 0;
+	width: 50%;
+	margin: 30px auto;
+	border: solid 5px #7175df;
+	border-radius: 5px;
+	background-color: #7175df;
+}
+.yell #jihanki .btn-block a {
+	margin: 0 auto;
+	color: white;
+	text-decoration: none;
+}
+.yell #jihanki .btn-block a p {
+	vertical-align: bottom;
+	text-align: center;
+}
+.yell #jihanki .applicationFlows li {
+	list-style-type: disc;
+	margin-left: 2em;
+}
+
+/*jihankiMap*/
+.yell #jihanki .jihankiMap .mapArea {
+	margin: 10px 0;
+	color: #7175df;
+	font-size: 14px;
+}
+.yell #jihanki .jihankiMap li:not(:first-child) {
+	margin-top: 10px;
+}
+.yell #jihanki .jihankiMap dt {
+	color: #F4A433;
+} 
+.yell #jihanki .jihankiMap dd {
+	margin-top: 8px;
+}
+.yell #jihanki .jihankiMap dd p {
+	margin-top: 8px;
+	text-align: center;
+}
+/*jihankiMap end*/
+.yell #jihanki .applicableIdol {
+	border-top: 1px dotted #080808;
+	padding-top: 20px;
+}
+.yell #jihanki  .area-bnrWebApp img {
+    max-width: 100%;
+    height: auto;
+}
+.yell #jihanki .cautionlist li {
+	list-style-type: disc;
+	margin-left: 1em;
+}
+.yell #jihanki .ticket_img img {
+	max-width: 100%;
+	margin: 10px auto;
+	display: block;
+}
+.yell #jihanki .prize li {
+	list-style-type: disc;
+	margin-left: 1em;
+}
+.yell #jihanki .appearanceIdol li {
+	margin-top: 15px;
+	border: 3px solid #F4A433;
+	border-radius: 10px;
+	box-sizing: border-box;
+}
+.yell #jihanki .appearanceIdol li dl {
+	margin: 10px;
+}
+.yell #jihanki .appearanceIdol img {
+	width: 100%;
+}
+.yell #jihanki .appearanceIdol .akisibuproject {
+	margin: 0 0 16px;
+}
+.yell #jihanki .appearanceIdol .sutherncross{
+	margin: -5px 0 21px;
+}
+.yell #jihanki .appearanceIdol li dd {
+	text-align: center;
+	font-weight: 700;
+	color: #F4A433;
+	margin: 8px 0;
+}
